@@ -1,0 +1,15 @@
+.bloc_un
+{
+    border: #0f0f0f 2px solid;
+    width: 500px;
+    height: 200px;
+    background-color: darkseagreen;
+}
+
+.bloc_deux
+{
+    border: #0f0f0f 2px solid;
+    width: 500px;
+    height: 200px;
+    background-color: ghostwhite;
+}
