@@ -63,25 +63,7 @@
                 </td>
             </tr>
             
-<!-- Modal -->
-<div id="post_modal" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #0B5ED7; color:beige;">
-        <h1 class="modal-title fs-5" style="text-align:center;" id="staticBackdropLabel">Details de l'article </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div id="post_detail" class="modal-body">
-        view
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
+
             <?php
             } 
         }
@@ -108,7 +90,25 @@
     </table>
 
 </div>
-
+<!-- Modal -->
+<div id="post_modal" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #0B5ED7; color:beige;">
+        <h1 class="modal-title fs-5" style="text-align:center;" id="staticBackdropLabel">Details de l'article </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="post_detail" class="modal-body">
+        view
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
 
 
 <script>

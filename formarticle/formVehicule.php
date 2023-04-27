@@ -28,7 +28,7 @@
                                             <div class="form-group col-md-6" >
                                                 <label for="type" class="sr-only">Marque vehicule :</label>
                                                 
-                                                <select class="form-control" name="marquevehicule" id="marquevehicule" >
+                                                <select class="form-control" name="marquevehicule" id="marquevehicule"   style="font-size:14px;">
                                                     <option  disabled="" selected="">Selectionner marque..</option>
                                                     <?php
                                                         // $query = "SELECT * FROM marquevehicule";
@@ -54,7 +54,7 @@
                                             </div>
                                             <div class="form-group col-md-6" >
                                                 <label for="type" class="sr-only">Modèle :</label>
-                                                <select class="form-control" name="modelevehicule" id="modelevehicule">
+                                                <select class="form-control" name="modelevehicule" id="modelevehicule" style="font-size:14px;">
                                                     <option  disabled="" selected="">Selectionner modèle..</option>
                                                     <option  disabled="" >Selectionner d'abord la marque</option>
                                                 </select>
@@ -62,7 +62,7 @@
                                             </div>
                                             <div class="form-group col-md-6" >
                                                 <label for="couleur" class="sr-only">Couleur</label>
-                                                <select class="form-control" name="couleurvehicule" id="couleurvehicule">
+                                                <select class="form-control" name="couleurvehicule" id="couleurvehicule" style="font-size:14px;">
                                                     <option  disabled="" selected="">Selectionner couleur..</option>
                                                     <option >BLANC</option>
                                                     <option >BLEU</option>
@@ -78,13 +78,13 @@
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="km" class="sr-only">Kilométrage</label>
+                                                <label for="km" class="sr-only" >Kilométrage</label>
                                                 <input name="km" id="km" rows="3" class="form-control" placeholder="Kilométrage" maxlength="500" minlength="3"></input>
                                             </div>
                                             <div class="form-group col-md-6" >
                                                 <label for="type" class="sr-only">Transmission </label>
                                                 
-                                                <select class="form-control" name="transmission" >
+                                                <select class="form-control" name="transmission" style="font-size:14px;" >
                                                     <option  disabled="" selected="">Transmission..</option>
                                                     <option>Automatique</option>
                                                     <option>Manuel</option>
@@ -100,7 +100,7 @@
                                             <div class="form-group  col-md-6">
                                                 <label for="annee" class="sr-only">Année de fabrication </label>
                                                   
-                                                <select class="form-control" name="anneefabrication" >
+                                                <select class="form-control" name="anneefabrication" style="font-size:14px;" >
                                                     <option  disabled="" selected="">Année de fabrication..</option>
                                                     <option>2000</option>
                                                     <option>2001</option>
@@ -138,8 +138,9 @@
                                                     
                                                         <input type="submit" name="publier" value="Publier" class="btn btn-primary">
                                                     <div class="btn-group">
-                                                        <span class="btn btn-file" style="background-color: orangered;">Ajouter image
-                                                            <input type="file" multiple="multiple" class="btn btn-primary"  name="avatar"  id="avatare" accept="image/*" onchange="preview_image(event)">  
+                                                        <span class="btn btn-file" style="background-color: orangered;"><p class="mb-1">Ajouter image  <i class='bx bx-image-add'></i></p>
+                                                       <input type="file" class="btn btn-primary"  name="image[]"  id="image" multiple accept=".jpg, .png, .gif" accept="image/*" onchange="preview_image(event)">  
+                                                            
                                                     </div>
                                             </div>
                                         </form>
@@ -150,7 +151,7 @@
                                             <div class="form-group" >
                                                 <label for="content" class="sr-only">Statut</label>
                                                 <div class="media-body img-thumbnail">
-                                                    <img id="output_image" height="150px" width="250px" alt="."/>
+                                                    <img src="img/images-regular-36.png" id="output_image" height="50px" width="50px" alt="no image"/>
                                                 </div>
                                             </div>
                                     </div>

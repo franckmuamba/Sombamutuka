@@ -1,6 +1,7 @@
 <?php
-
+include ('includes/fonctions.php');
 include ("config/database.php");
+
 
 sleep(1);
 
@@ -53,43 +54,74 @@ if(isset($_POST["action"]))
     $total_row = $statement->rowCount();
     $output='';
 
+// DEBUT -- RECHERCHE DE L'IMAGE DANS LA TABLE IMAGES //
+//$id= $_POST["id"];
+
+//$requeteImage = $bd->prepare("SELECT I.imagePost, M.id
+//FROM microposts M, images I
+//WHERE I.micropost_id = M.id
+//AND I.user_id = M.user_id");
+
+//$requeteImage->execute();
+
+//$res =  $requeteImage->fetchAll(PDO::FETCH_OBJ);
+
+
+// FIN -- RECHERCHE IMAGE TABLE IMAGES WITH ID MICROPOST //
+
+
+    // AFFICHER IMAGE //
+
+  //  foreach($res as $re)
+    //{
+        
+      //  $output.='<p><label><img src="membres/imagePosts/'.$re->imagePost.'" class="media-body img-thumbnail"/></label></p>';
+    //}
+
+
+    // FIN A I //
+
+
+
+
     if($total_row>0)
     {
         foreach($result as $row)
         {
             $output .='
             <div class="col-sm-4 col-lg-4 col-md-4 card bg-light">
-                <div style="border:1px solid #ccc; border-radius:5px; padding:10px; margin-bottom:16px; height:450px; margin-top: 25px;"/>
-                    <img src="membres/imagePosts/'.$row['imagePost'].'" alt="photo manquante" class="img-responsive" style="width:230px; height:200px;"/>
+                <div style="border:1px solid #ccc; border-radius:5px; padding:10px; margin-bottom:16px; height:550px; margin-top: 25px;">
+                    <img src="membres/imagePosts/'.$row['imagePost'].'" alt="photo manquante" class="img-responsive" style="width:100%; height:250px;"/>
 
-                   <p class="card-text" align="center"><strong><a style="text-decoration:none;" href="#">'
+                   <p class="card-text" align="center"><strong>
+                   <a style="text-decoration:none;" href="#">'
                     .$row['marque'].' | '
-                    .$row['modele'].' | '
-                   .$row['couleur'].'</a></strong></p>
+                    .$row['modele'].'  </a></strong></p>
 
                     <h4 style="text-align:center;" class="text-danger">'.$row['prix'].'$</h4>
                     <p class="card-text" style="color:darkgrey;">
                         
-                        | Kilométrage: '.$row['km'].' km<br/>
-                        | Année de fabrication : '.$row['annee'].' <br/>
-                        | Vendeur: '.$row['prenom'].' <br/>
-                        | Téléphone: '.$row['telephone'].' <br/>
-                        | Publié le : '.$row['created_at'].' 
+                    <i class="bx bx-run" style="color:gray"></i> Kilométrage: '.$row['km'].' km<br/>
+                    <i class="bx bxs-calendar"  style="color:gray"></i>  Année de fabrication : '.$row['annee'].' <br/>
+                    <i class="bx bxs-happy" style="color:gray"></i> Vendeur: '.$row['prenom'].' <br/>
+                    <i class="bx bxs-phone" style="color:gray"></i>  Téléphone: '.$row['telephone'].' <br/>
+                    <i class="bx bx-calendar" style="color:gray"></i> Publié le : '.$row['created_at'].' 
                     </p>
                     <div class="row">
                         <div class="col-md-6">
-                        <button type="button" name="view" class="btn btn-info btn-sm view" id="'. $row['id'].'">
-                            Voir plus
-                        </button>
+                            <button type="button" name="view" class="btn btn-primary btn-sm view" id="'. $row['id'].'">
+                                Détails
+                            </button>
                         </div>
                         <div class="col-md-6">
-                       
+                            <a href="detail.php?id='.$row['id'].'  type="button"  class="btn btn-secondary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
+                                Ouvrir
+                            </a>
                         </div>
-                    
-                    </div>
-                   
+
+                    </div>               
                 </div>
-                
+                </br> 
                 
             </div>
 

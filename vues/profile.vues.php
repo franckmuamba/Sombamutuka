@@ -185,22 +185,29 @@
 
 </br>
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <?php if (count($microposts) !=0) :?>
+            <div class="col-md-12">
+                            <br />
+                            <div class="row">
+                            <?php if (count($microposts) !=0) :?>
                             <?php foreach ($microposts as $micropost):?>
                                     <?php include('parties/_microposts.php') ?>
                                     <?php endforeach;?>
-                    <?php else :?>
-                            <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
-                    <?php endif; ?>
+                            <?php else :?>
+                                    <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
+                            <?php endif; ?>
+                            </div>
                 </div>
-                <div class="col-md-2"></div>
+                   
             </div>
-
+            </div>
             
 
     </div>
+                    </br>  </br>  </br>
+               
+               
+              
+            
 <?php include('parties/_footer.php'); ?>
 <script type="text/javascript">
 
@@ -242,3 +249,33 @@
 
 
 </script>
+
+<!--DEBUT  INSERTION DE PLUSIEURS IMAGES DANS LA BD AVEC AJAX     -->
+<!-- --------------------------------------------------------->
+
+<script>
+
+      // START-  THIS ONE LOAD MY IMAGES FROM THE DATA BASE AND DISPLAY IT
+      function charger_images()
+      {
+          $.ajax({
+              url: "recherche_data_micropost.php",
+              success: function(data)
+              {
+                  $('#images_list').html(data);
+              }
+          });
+      }
+      // END-  THIS ONE LOAD MY IMAGES FROM THE DATA BASE
+
+    $(document).ready(function(){
+
+          // START APPEL DE LA FONCTION QUI CHARGE LES IMAGES ET LES DISPLAY
+
+                charger_images();
+    
+    });
+</script>
+<!-- ------------------------------------------------------ -->
+<!--FIN  INSERTION DE PLUSIEURS IMAGES DANS LA BD AVEC AJAX     -->
+<!-- --------------------------------------------------------->

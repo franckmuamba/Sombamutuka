@@ -14,9 +14,6 @@ $micopost_lastID = $r->fetchColumn();
 
 
 if(count($_FILES["image"]["tmp_name"])>0){
-    //var_dump($_FILES['name']);
-    //die();
-
     for($count = 0; $count< count($_FILES["image"]["tmp_name"]);$count++)
     {
        // $image_file= addslashes(file_get_contents($_FILES["image"]["tmp_name"][$count]));
