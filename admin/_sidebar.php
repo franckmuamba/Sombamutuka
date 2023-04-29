@@ -19,9 +19,9 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="archivePosts.php">
 					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Analytics</span>
+					<span class="text">Archives</span>
 				</a>
 			</li>
 			<li>

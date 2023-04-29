@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('filtres/visiteur_filtre.php');
+//require ('filtres/visiteur_filtre.php');
 require ('config/database.php');
 require ('includes/fonctions.php');
 require ('includes/constants.php');

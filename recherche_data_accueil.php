@@ -8,10 +8,11 @@ sleep(1);
 if(isset($_POST["action"]))
 {
     $requete = ("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
-    M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
+     DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
     FROM users U, microposts M
     WHERE M.user_id = U.id 
-    
+    AND M.valide = '1' 
+    AND  DATEDIFF(M.dateEnd, Now()) >0
    ");
 
     if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))

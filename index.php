@@ -1,6 +1,6 @@
 <?php
 //session_start();
-
+//require ("filtres/visiteur_filtre.php");
 require('vues/index.vues.php');
 
 ?>
