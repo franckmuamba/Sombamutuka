@@ -6,7 +6,23 @@ $q->execute([get_session('user_id')]);
 $notifications_count = $q->rowCount();
 ?>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #1763AF;" id="navbar">
+<style>
+
+    .navbar {
+        padding: 14px 0;
+    }
+    .navbar-nav {
+        font-weight: bold;
+    }
+
+    .dropdown-menu {
+        background-color: #00a5bf;
+        border: none;
+    }
+
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #00a5bf;" id="navbar">
     <a class="navbar-brand" href="index.php"><img src="img/logo9.png" style="width:100%; height:60px; margin: -12px 25px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

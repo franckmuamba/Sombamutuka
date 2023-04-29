@@ -8,26 +8,128 @@
 <style>
    .index 
    {
-    background-image: url(assets/img/bannierevehicule.jpg);
-    background-color: white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
     color: rgb(0, 0, 0);
     width: 100%;
-    height: 465px;
-    margin-top:-63px;
-    padding-top: 0;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
    }
+
+   .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+
+   
+   .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+
+    .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    line-height: 5rem;
+    }
+
+    .p .span {
+        color: #f5deb3c8;
+    }
+    .p .span span {
+        color: white;
+        font-size: 16px;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+   .h3_nouv {
+    color: gray;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+
+   .card-text {
+    color: gray;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+
+   .card-header {
+    border: none;
+   }
+
+   .discover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 90px;
+   }
+    
+   .line {
+    display: flex;
+    border: 1px solid #9f9f9e8a;
+    width: 40%;
+    margin: 0 auto 70px auto;
+    text-align: center;
+    justify-self: center;
+   }
+
+   .discover div  {
+    width: 50%;
+   }
+
+   .discover div h3 {
+    color: black;
+    font-size: 38px;
+    font-weight: bold;
+
+   }
+   .discover div p {
+    color: gray;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+   }
+
+   .discover div a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px;
+    background-color: orange;
+    border-radius: 8px;
+
+   }
+
    
 </style>
 
-
     <br />
     <div class="index img-fluid">
-       
+        <div class=" flou"></div>
+        <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
+            <span class="span">SOMBAMUTUKA <br>
+                <span>Profitez de nos services sûrs et exclusifs</span>
+            </span>
+        </p>
+        <img src="img/car5.jpeg" alt="time home image">
         <div class="container" >
-      
             <div class="row" id="showhome">
                     <div class="col-md-6 col-sm-6" id="tab">
                        
@@ -45,27 +147,38 @@
 </br></br>
 
       
+<div class="discover">
+    <div>
+        <img src="img/temp.webp" alt="time home image">
+    </div>
+    <div>
+        <h3>Avec nous?</h3>
+        <p>Gagnez votre temps avec sombamutuka, nous avons tous ces dont vous avez besoin, nos services de ventes sont hors pair,
+            n'hesitez pas de visiter notre page pour en savoir plus
+        </p>
+        <a class="lien_v"href="vehicule.php">Nos offres</a>
+    </div>
+</div>
+<div class="line"></div>
 <div class="container p-5 shadow p-3 mb-5 bg-light rounded" style="background-color: #AAAAAA;">
-           
         <div class="row">
                     <div class="col-sm-6 col-md-6">
-                        <strong><a href="#"  style="text-decoration: none;"><h3 class="text-center ">NOUVEAUTES</h3></a></strong>
+                        <h3 class="h3_nouv ">NOUVEAUTÉS</h3>
                             <div class="card" style="width: 100%;">
                                 <img src="https://auto-moto.digidip.net/visit?url=https%3A%2F%2Fsf2.auto-moto.com%2Fwp-content%2Fuploads%2Fsites%2F9%2F2023%2F04%2Fjlr_reimagine_jaguar_tease_image_190423.jpg&ppref=https%3A%2F%2Fwww.auto-moto.com%2Fnouveautes&currurl=https%3A%2F%2Fwww.auto-moto.com%2Fnouveautes%2Fjaguar-land-rover-futur-seclaircit-420281.html" class="card-img-top" alt="Photo nouveauté">
                                 <div class="card-body">
                                     <p class="card-text">
                                         La situation du groupe Jaguar Land Rover est assez préoccupante.
                                          Pour la première fois depuis bien longtemps toutefois, le soleil
-                                          semble pointer le bout de son nez. 
+                                          semble pointer le bout de son nez... 
                                         <a href="https://www.auto-moto.com/nouveautes" target="_blank">Lire plus </a>
                                     </p>
                                 </div>
                             </div>
                             
-                      
                     </div>
                     <div class="col-sm-6 col-md-6">
-                        <strong><a href="#"  style="text-decoration: none;"><h3 class="text-center ">LES ARTICLES RECENTS</h3></a></strong>
+                        <h3 class="h3_nouv ">ARTICLES RECENTS</h3>
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <ol class="carousel-indicators">
                     <?php echo make_slide_indicators($bd); ?>
@@ -95,12 +208,10 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card mt-3" id="titrearticle">
-                <div class="card-header text-center">
-                    <h3>
-                        <strong><a style="text-decoration: none;"  href="#">FILTRE DES ARTICLES</a></strong>
-                    </h3>
-                </div>
+            <div class="card mt-3 card-header" id="titrearticle">
+                <h3 class="h3_nouv">
+                    FILTRE DES ARTICLES
+                </h3>
             </div>
 
                 <div class="col-md-3" id="bloquemarquegauche">

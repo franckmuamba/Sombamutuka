@@ -1,8 +1,8 @@
 
 <?php $title = "vehicule"; ?>
 <!-- /container -->
-
 <?php include('parties/_header.php'); ?>
+
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
@@ -51,22 +51,76 @@ include ('parties/_flash.php')
        color: gray;
        font-size: 12px;
     }
+
+   .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+   }
+
+   .row h2 {
+    color: gray;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+   }
+
+   .row .card {
+    width: 300px;
+    height: auto;
+    align-items: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+   }
+
+   .row .card h3 {
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+
+   .row .card p {
+    color: gray;
+    font-size: 14px;
+    padding: 14px;
+   }
+
+   .card-header {
+    background-color: #F1F1F3;
+   }
+
+   .card-header  h3{
+    color: gray;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 14px;
+   }
 </style>
 
 <br><br><br><br><br>
 <div class="container text-center">
     <div class="row">
-        <div class="col-md-4 col-sm-4">
-                <p><img src="img/sell.avif" style="width: 200px; height:200px;"></p>
-                <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Vendre véhicule</a></h3>
+        <h2>Nos services</h2>
+        <div class="col-md-4 col-sm-4 card">
+                <img src="img/3.jpeg" style="width: 200px; height:200px;">
+                <h3>Vente véhicules</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
-        <div class="col-md-4 col-sm-4">
-            <p><img src="img/moto3.png" style="width: 200px; height:200px;"></p>
-            <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Vendre moto</a></h3>
+        <div class="col-md-4 col-sm-4 card">
+            <img src="img/5.jpeg" style="width: 200px; height:200px;">
+            <h3>Vente motos</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
-        <div class="col-md-4 col-sm-4">
-            <p><img src="img/ap.png" style="width: 200px; height:200px;"></p>
-            <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Créer compte</a></h3>
+        <div class="col-md-4 col-sm-4 card">
+              <img src="img/6.jpeg" style="width: 200px; height:200px;">
+              <h3>Vente accessoirs </h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
     </div>
 </div>
@@ -74,15 +128,9 @@ include ('parties/_flash.php')
 <br><br><br>
 <!-- Button trigger modal -->
 <div class="container">
-    
-    <div class="card mt-3">
-                    <div class="card-header text-center">
-                        <h3>
-                            <strong><a style="text-decoration: none;" href="#">TOUS LES ARTICLES VEHICULES</a></strong>
-                        </h3>
-                    </div>
-    </div>
-
+  <div class="card-header text-center">
+      <h3>TOUS LES ARTICLES VEHICULES</h3>
+  </div>
 </div>
 <br>
 <!-- DEBUT TABLEAU ALL DATA WITH FILTER  -->
