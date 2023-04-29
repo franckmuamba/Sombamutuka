@@ -57,9 +57,10 @@ if (isset($_POST['publier']))
                         //var_dump($_POST);
                         //die();
                         extract($_POST);
+                        $validite = 0;
 
-                        $rq = $bd->prepare('INSERT INTO microposts(marque,modele,couleur,km,transmission,prix,annee,localisation,user_id,categorie)
-                         values(:marque,:modele,:couleur,:km,:transmission,:prix,:annee,:localisation,:user_id,:categorie)');
+                        $rq = $bd->prepare('INSERT INTO microposts(marque,modele,couleur,km,transmission,prix,annee,localisation,user_id,categorie,valide)
+                         values(:marque,:modele,:couleur,:km,:transmission,:prix,:annee,:localisation,:user_id,:categorie,:valide)');
                         $rq->execute([
                             'marque'=>$marquevehicule,
                             'modele'=>$modelevehicule,
@@ -70,7 +71,9 @@ if (isset($_POST['publier']))
                             'annee'=>$anneefabrication,
                             'localisation'=>$localisation,
                             'user_id'=>get_session('user_id'),
-                            'categorie'=>$categorievehicule     
+                            'categorie'=>$categorievehicule,
+                            'valide'=>$validite
+                             
                             
                         ]);
 

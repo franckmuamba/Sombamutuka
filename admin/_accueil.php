@@ -20,13 +20,6 @@
 
 			<ul class="box-info">
 				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3><?php echo $nombreTotal ?></h3>
-						<p>Total Publications</p>
-					</span>
-				</li>
-				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
 						<h3><?php echo $totalUsers ?></h3>
@@ -60,15 +53,16 @@
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>Publications récentes</h3>
+						<h3>Tous les utilisateurs</h3>
 						<i class='bx bx-search' ></i>
 						<i class='bx bx-filter' ></i>
 					</div>
 					<table>
 							<thead>
 								<tr>
-									<th>Vendeur</th>
-									<th>Date publication</th>
+									<th>Prenom</th>
+									<th>Nom</th>
+									<th>Date inscription</th>
 									<th>Status</th>
 								</tr>
 							</thead>
@@ -81,7 +75,8 @@
 										<img src="membres/avatar/<?= $row['avatar'] ?>">
 										<p><?= $row['prenom'] ?></p>
 									</td>
-									<td><?= $row['created_at'] ?></td>
+									<td><?= $row['nom'] ?></td>
+									<td><?= $row['ucreated_at'] ?></td>
 									<td><span class="status completed">Completed</span></td>
 								</tr>
 						

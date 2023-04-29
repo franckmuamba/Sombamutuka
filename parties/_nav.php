@@ -34,9 +34,8 @@ $notifications_count = $q->rowCount();
          
         </ul>
 
-        <ul class="navbar-nav mr-auto">
-        
-                      <li class="nav-item">
+        <ul class="navbar-nav mr-auto">                      
+        <li class="nav-item">
                         <a class="nav-link <?= set_active('index') ?>" href="index.php ">Accueil</a>
                     </li>
                    
@@ -50,33 +49,26 @@ $notifications_count = $q->rowCount();
                     <li class="nav-item">
                         <a class="nav-link <?= set_active('moteurs') ?>" href="moteur.php">Moteurs</a>
                     </li>
-                    
-                   
                     <li class="nav-item">
                         <a class="nav-link <?= set_active('apropos') ?>" href="apropos.php ">A propos</a>
                     </li>
-                    
-                    
-                   
-            
+
                 <?php if (is_logged_in()):?>
-                <li class="dropdown">
+                        <li class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
                             </a>
-
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
-
                                 <a class="dropdown-item <?= set_active('profile') ?>"  href="profile.php?id=<?= get_session('user_id') ?>">Ajouter article</a>
                                 <a class="dropdown-item <?= set_active('modifier_user') ?>" href="modifier_user.php" >Modifier profile</a>
                                 <a class="dropdown-item <?= set_active('index') ?>" href="list_users.php" >Membres</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item <?= set_active('deconnexion') ?>" href="deconnexion.php" >Déconnexion</a>
                             </div>
-                </li>
-            <?php else: ?>
-                <li class="nav-item dropdown">
+                    </li>
+                 <!-- MENU SIGN IN SIGN UP -->
+                <?php elseif(!is_logged_in()): ?>
+                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Signup/Login
                       </a>
@@ -91,7 +83,7 @@ $notifications_count = $q->rowCount();
                         </li>
                         
                       </ul>
-                    </li>
+                </li>
               
             <?php endif;?>
         </ul>

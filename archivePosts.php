@@ -64,13 +64,13 @@ $(document).ready(function () {
 					<span class="text">Tableau de bord</span>
 				</a>
 			</li>
-			<li class="active">
+			<li >
 				<a href="validationPub.php">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Validation </span>
 				</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="archivePosts.php">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Archives</span>
@@ -127,7 +127,7 @@ $(document).ready(function () {
 			<label for="switch-mode" class="switch-mode"></label>
 			<a href="#" class="notification">
 				<i class='bx bxs-bell' ></i>
-				<span class="num"><?php echo $notYetvalidPosts ?></span>
+				<span class="num"><?php echo $postArchived ?></span>
 			</a>
 			<a href="#" class="profile">
 				<img src="img/superuser.webp">
@@ -139,14 +139,14 @@ $(document).ready(function () {
             <main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Validation des publications</h1>
+					<h1>Tous les posts archivés</h1>
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Tableau de bord</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Validation</a>
+							<a class="active" href="#">Archives</a>
 						</li>
 					</ul>
 				</div>
@@ -164,20 +164,21 @@ $(document).ready(function () {
 						<p>Total Publications</p>
 					</span>
 				</li>
-				<li>
-					<i class='bx bxs-group' ></i>
-					<span class="text">
-						<h3><?php echo $notYetvalidPosts ?></h3>
-						<p>Posts pas encore validés </p>
-					</span>
-				</li>
-				<li>
+                <li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
 						<h3><?php echo $validPosts ?></h3>
-						<p>Posts validés</p>
+						<p>Posts actifs</p>
 					</span>
-				</li>			
+				</li>	
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3><?php echo $postArchived ?></h3>
+						<p>Posts archivés </p>
+					</span>
+				</li>
+						
 			</ul>
 
 		<script src="script.js"></script>
@@ -189,7 +190,7 @@ $(document).ready(function () {
     <div class="card mt-3">
                     <div class="card-header text-center">
                         <h3>
-                            <strong><a style="text-decoration: none;" href="#">TOUS LES ARTICLES POUR VALIDATION</a></strong>
+                            <strong><a style="text-decoration: none;" href="#">TOUS LES ARTICLES ARCHIVES</a></strong>
                         </h3>
                     </div>
     </div>
@@ -198,7 +199,7 @@ $(document).ready(function () {
 <!-- DEBUT TABLEAU ALL DATA WITH FILTER  -->
 <?php
 
-    include ('parties/_dataTableConfirm.php')
+    include ('parties/_dataTableArchive.php')
 
 ?>
 <!-- FIN TABLEAU ALL DATA WITH FILTER  -->

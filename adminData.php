@@ -3,19 +3,17 @@ require ('config/database.php');
 require ('includes/fonctions.php');
 require ('includes/constants.php');
 
-$query = "SELECT U.id user_id, U.prenom, U.email, U.avatar, U.telephone,
-                             M.id, M.marque, M.couleur, M.km, M.transmission, M.modele, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
+$query = "SELECT U.id, U.prenom, U.nom, U.email, U.avatar, U.telephone, U.ucreated_at,
+                             M.dateEnd, M.id, M.marque, M.couleur, M.km, M.transmission, M.modele, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
                              FROM users U, microposts M
                              WHERE M.user_id = U.id
                            
                             
                              ORDER BY M.id DESC";     
-                             
+              
                              
 $query2 = "SELECT * FROM users"; 
-
-
-$statement = $bd->prepare($query);
+$statement = $bd->prepare($query2);
 
 
 if($statement->execute()){
@@ -66,7 +64,17 @@ if($statement6->execute()){
     $result6 = $statement6->fetchAll();
     $notYetvalidPosts = count($result6);
 }
-// POSTS VALIDATED
+// POSTS NOT YET VALIDATED
+
+
+// POSTS ARCHIVED
+$query7 = "SELECT * FROM microposts WHERE valide='1' AND DATEDIFF(dateEnd, Now())<0"; 
+$statement7 = $bd->prepare($query7);
+if($statement7->execute()){
+    $result7 = $statement7->fetchAll();
+    $postArchived = count($result7);
+}
+// POSTS ARCHIVED
 
 ?>
 

@@ -3,13 +3,13 @@
 <table id="example" class="display" style="width:100%; font-size:12px;">
         <thead style="color: white; background:#2d4879;">
             <tr>
+                <th>ID</th>
                 <th>Vendeur</th>
                 <th>Date publication</th>
                 <th>Date d'expiration</th>
                 <th>Nombre jours</th>
                 <th>Marque</th>
                 <th>Image</th>
-                <th>Validation</th>
                 <th>Details</th>
                 <th>Valider</th>
             </tr>
@@ -19,7 +19,9 @@
               $q = $bd->prepare("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
                DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.valide, M.dateEnd, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
               FROM users U, microposts M
-              WHERE M.user_id = U.id
+              WHERE M.user_id = U.id 
+              AND valide='1'
+              AND DATEDIFF( M.dateEnd, Now())<0
              
               ORDER BY M.id DESC");
 
@@ -43,13 +45,13 @@
                foreach($posts as $post){
             ?>
             <tr id="ligne"  style="cursor:pointer" onclick="">
+                <td><?= $post->id ?></td>
                 <td><?= $post->prenom ?></td>
                 <td><?= $post->created_at ?></td>
                 <td><?= $post->dateEnd ?></td>
                 <td><?= $post->nombreJour ?></td>
                 <td><?= $post->modele ?></td>
                 <td><img src="membres/imagePosts/<?= $post->imagePost ?>" class="media-body img-thumbnail" style="width:150px; height:100px; "></td>
-                <td><?= $post->valide ?></td>
                 <td>
                 <button type="button" name="view" class="btn btn-info btn-sm view" id="<?= $post->id ?>">
                   Voir plus
@@ -75,13 +77,13 @@
         </tbody>
         <tfoot>
             <tr>
+                <th>ID</th>
                 <th>Vendeur</th>
                 <th>Date publication</th>
                 <th>Date d'expiration</th>
                 <th>Nombre jours</th>
                 <th>Modèle</th>
                 <th>Image</th>
-                <th>Validation</th>
                 <th>Details</th>
                 <th>Valider</th>
             </tr>
