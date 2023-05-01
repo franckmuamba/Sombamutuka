@@ -3,33 +3,6 @@
 <!-- /container -->
 <?php include('parties/_header.php'); ?>
 
-<!-- <style>
-  .index 
-   {
-    color: rgb(0, 0, 0);
-    width: 100%;
-    height: 700px;
-    margin-top:-68px;
-    position: relative;
-    text-align: center;
-   }
-
-   .index img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   }
-   
-   .flou {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: #486c7594;
-    position: absolute;
-    text-align: center;
-    }
-</style> -->
-
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
@@ -68,6 +41,14 @@
     align-items: center;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+   }
+
+   .row .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid lightgray; 
+    border-radius: 50%;
    }
 
    .row .card h3 {
@@ -113,25 +94,46 @@
     object-fit: cover;
    }
    
-   /* .flou {
+   .flou {
     width: 100%;
     height: 100%;
     object-fit: cover;
     background-color: #486c7594;
     position: absolute;
     text-align: center;
-    } */
+    }
+
+      .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 300px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff67;
+    line-height: 5rem;
+    }
+
+    .span {
+      top: 65%;
+      left: 45%;
+      transform: translateX(100%);
+      color: #f5deb3c8;
+      position: absolute;
+      font-size: 100px;
+      font-weight: bolder;
+      
+    }
 </style>
 
 
 <section class="index" >
   <div class=" flou"></div>
-  <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
-      <span class="span">SOMBAMUTUKA <br>
-          <span>Profitez de nos services sûrs et exclusifs</span>
-      </span>
-  </p>
-  <img src="img/car5.jpeg" alt="time home image">
+  <p class="p">SOMBA</p>
+  <p class="span">ᄂЦXΣ</p>
+  <img src="img/car1.webp" alt="time home image">
   <div class="container">
     <?php
 
@@ -159,12 +161,12 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
         <div class="col-md-4 col-sm-4 card">
-            <img src="img/5.jpeg" style="width: 200px; height:200px;">
+            <img src="img/m3.jpeg" style="width: 200px; height:200px;">
             <h3>Vente motos</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
         <div class="col-md-4 col-sm-4 card">
-              <img src="img/6.jpeg" style="width: 200px; height:200px;">
+              <img src="img/m2.jpeg" style="width: 200px; height:200px;">
               <h3>Vente accessoirs </h3>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>

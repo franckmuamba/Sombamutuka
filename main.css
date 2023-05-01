@@ -165,11 +165,11 @@ a{
 
 body{
 
-    background-color:#fff;
-    background-attachment: fixed;
+    background-color:red;
+    /* background-attachment: fixed;
 
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%; */
 
 }
 
@@ -594,7 +594,7 @@ form input[type="radio"]
 
 }
  
-section#indexmotos
+/* section#indexmotos
 {
     background-position: center;
     background-repeat: no-repeat;
@@ -605,7 +605,7 @@ section#indexmotos
     margin-top:-40px;
     padding-top: 0;
     background-image: url(img/bannieremoto.jpg);
-}
+} */
 
 section#indexmoteurs
 {

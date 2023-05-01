@@ -13,28 +13,22 @@
 
 include ('parties/_flash.php')
 ?>
-<section id="indexmotos" class="img-fluid">
-    <div class="container">
-    <?php
-
+<section class="index">
+    <div class=" flou"></div>
+    <p class="p">LA COURSE</p>
+    <p class="span">ᄂЦXΣ</p>
+    <img src="img/mt2.jpeg" alt=" moto image">
+    <!-- <div class="container">
+        <?php
         //include ('parties/_pubentetemotos.php')
-
-    ?>
-    </div>
-   
+        ?>
+    </div> -->
 </section>
 <div class="row">
     <?php
-
-
     include ('parties/_error.php')
-
     ?>
-    <div class="machin">
-  
-            
-    </div>
-          
+    <div class="machin"></div>
 </div>
 
 <style>
@@ -45,42 +39,140 @@ include ('parties/_flash.php')
        color: gray;
        font-size: 12px;
     }
+
+    .lax {
+        background-image: url("img/lax.jpeg");
+        min-height: 300px; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .index 
+   {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
+   }
+
+   .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+   
+   .flou {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: #486c7594;
+        position: absolute;
+        text-align: center;
+    }
+
+    .p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 300px;
+        font-weight: bold;
+        padding: 10px;
+        color: #ffffff67;
+        line-height: 5rem;
+    }
+
+    .span {
+      top: 65%;
+      left: 45%;
+      transform: translateX(100%);
+      color: #f5deb3c8;
+      position: absolute;
+      font-size: 100px;
+      font-weight: bolder;
+      
+    }
+    .moto_1 {
+        height: 700px;
+        background-color: black;
+        margin-bottom: 90px;
+
+    }
+    .moto_1 h3 {
+        color: #f5deb3c8;
+        padding-top: 80px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .moto_1 p {
+        color: white;
+        margin: 70px 40px 0 40px;
+        text-align: center;
+        font-size:16px;
+    }
+
+    .div_moto {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        align-items: center;
+    }
+
+    .div_moto div {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div_moto div img {
+        width: 70%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .h3_nouv {
+    color: gray;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+
 </style>
 
-<br><br><br><br><br><br><br><br>
-<div class="container text-center">
-    <div class="row">
-        <div class="col-md-4 col-sm-4">
-                <p><img src="img/motoill.png" style="width: 200px; height:200px;"></p>
-                <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Vendre motos</a></h3>
+<div class="lax"></div>
+<div class="moto_1">
+    <h3>Top motos</h3>
+    <p>Profitez de la vie avec nos nouvelles marques tel que les motos routières, les roadsters, les sportives, les cruisers, les motos tout-terrain et les duals sports (ou double usage)</p>
+    <div class="div_moto">
+        <div>
+            <img src="img/r3.png">
         </div>
-        <div class="col-md-4 col-sm-4">
-            <p><img src="img/moto3.png" style="width: 200px; height:200px;"></p>
-            <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Vendre moto</a></h3>
-        </div>
-        <div class="col-md-4 col-sm-4">
-            <p><img src="img/ap.png" style="width: 200px; height:200px;"></p>
-            <h3><a style="text-decoration:none;" class="fs-4" href="inscription.php">Créer compte</a></h3>
+        <div>
+            <img src="img/r2.png">
         </div>
     </div>
 </div>
 
-<br><br><br>
-
-
 <!-- Button trigger modal -->
 
-  <br><br><br>
 <div class="container">
-    
     <div class="card mt-3">
-                    <div class="card-header text-center">
-                        <h3>
-                            <strong><a style="text-decoration: none;" href="#">TOUS LES ARTICLES MOTOS</a></strong>
-                        </h3>
-                    </div>
+        <div class="card-header text-center">
+            <h3 class="h3_nouv">
+                TOUS LES ARTICLES MOTOS
+            </h3>
+        </div>
     </div>
-
 </div>
 <br>
 <!-- DEBUT TABLEAU ALL DATA WITH FILTER  -->
