@@ -3,45 +3,40 @@
 <!-- /container -->
 <?php include('parties/_header.php'); ?>
 
+<!-- <style>
+  .index 
+   {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
+   }
+
+   .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+   
+   .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+</style> -->
+
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
-	
 
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-<?php
-
-include ('parties/_flash.php')
-?>
-
-
-
-<section id="indexpub" >
-<div class="container">
-    <?php
-
-    //include ('parties/_pubentete.php')
-
-    ?>
-</div>
-</section>
-
-
-<div class="row">
-    <?php
-
-
-    include ('parties/_error.php')
-
-    ?>
-    <div class="machin">
-  
-            
-    </div>
-          
-</div>
+<?php include ('parties/_flash.php'); ?>
 
 <style>
     #post_detail
@@ -101,7 +96,58 @@ include ('parties/_flash.php')
     margin-bottom: 20px;
     padding: 14px;
    }
+
+   .index 
+   {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
+   }
+
+   .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+   
+   /* .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    } */
 </style>
+
+
+<section class="index" >
+  <div class=" flou"></div>
+  <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
+      <span class="span">SOMBAMUTUKA <br>
+          <span>Profitez de nos services sûrs et exclusifs</span>
+      </span>
+  </p>
+  <img src="img/car5.jpeg" alt="time home image">
+  <div class="container">
+    <?php
+
+    //include ('parties/_pubentete.php')
+
+    ?>
+  </div>
+</section>
+<div class="row">
+    <?php
+    include ('parties/_error.php')
+    ?>
+    <div class="machin">           
+    </div>  
+</div>
+
 
 <br><br><br><br><br>
 <div class="container text-center">
