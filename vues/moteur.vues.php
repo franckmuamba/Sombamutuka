@@ -1,10 +1,6 @@
 
-<?php $title = "Moteurs"; ?>
+<?php $title = "moteurs"; ?>
 <!-- /container -->
-
-
-
-
 
 <?php include('parties/_header.php'); ?>
 
