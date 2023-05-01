@@ -11,6 +11,30 @@
 
                 <div class="col-md-3">
                     <div class="card shadow mt-3">
+                    <div class="card-header">
+                          <div class="list-group">
+                              <h3>Rechercher Index</h3>
+                          </div>
+                      </div>
+                      <div class="card-body">
+                                    <div class="dropdown-divider"></div>
+                                    <div class="form-group">
+                                                <label for="name">Index<span class="text-danger">*</span></label>
+                                                <input type="text" value="" name="index" id="index" class="form-control" required="required"/>
+                                            </div>
+                                    <form method="post">
+                                        <input type="submit" class="btn btn-primary" name="chercheIndex" value="Rechercher" />
+                                        <div class="form-group">
+                                        <label>Beggin period</label>
+                                            <input type="date" name="bday1" max="3000-12-31" min="1000-01-01" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Beggin period</label>
+                                        <input type="date" name="bday2" min="1000-01-01" max="3000-12-31"  class="form-control">
+                                        </div>
+                                    </form>
+                      </div>
+
                         <div class="card-header">
                           
                             <div class="list-group">
@@ -149,7 +173,33 @@
 
 
 </div>
+<script>
+var url = 'ajax/search.php';
 
+$('#searchbox').on('keyup', function ()
+{
+    var query = $(this).val();
+    
+    if (query.length > 0)
+    {
+        $.ajax({
+            type : 'POST',
+            url: url,
+            data: {
+                query: query
+            },
+
+            success: function (data) {
+                $("#display-results").html(data).show();
+            }
+        });
+    }
+    else
+    {
+        //$("#display-results").hide();
+    }
+});
+</script>
 
 <style>
     #loading

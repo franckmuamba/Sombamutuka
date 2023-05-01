@@ -44,10 +44,10 @@ $notifications_count = $q->rowCount();
                     </li>
                     <li class="nav-item">
             
-                        <a class="nav-link <?= set_active('vehicule') ?>" href="vehicule.php ">Véhicules</a>
+                        <a class="nav-link <?= set_active('vehicule') ?>" href="vehicule.php">Véhicules</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= set_active('moteurs') ?>" href="moteur.php">Moteurs</a>
+                        <a class="nav-link <?= set_active('moteur') ?>" href="moteur.php">Moteurs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= set_active('apropos') ?>" href="apropos.php ">A propos</a>
