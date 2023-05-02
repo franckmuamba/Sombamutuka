@@ -49,6 +49,8 @@ include ('parties/_flash.php')
         background-size: cover;
     }
 
+    
+
     .index 
    {
     color: rgb(0, 0, 0);
@@ -57,6 +59,7 @@ include ('parties/_flash.php')
     margin-top:-68px;
     position: relative;
     text-align: center;
+    /* border: 3px solid red: */
    }
 
    .index img {
@@ -80,7 +83,7 @@ include ('parties/_flash.php')
         left: 50%;
         transform: translate(-50%, -50%);
 
-        font-size: 300px;
+        font-size: 100px;
         font-weight: bold;
         padding: 10px;
         color: #ffffff67;
@@ -88,12 +91,12 @@ include ('parties/_flash.php')
     }
 
     .span {
-      top: 65%;
-      left: 45%;
-      transform: translateX(100%);
+        font-size: 70px;
+      top: 60%;
+      left: 40%;
+      transform: translateX(-15%);
       color: #f5deb3c8;
       position: absolute;
-      font-size: 100px;
       font-weight: bolder;
       
     }
@@ -120,13 +123,15 @@ include ('parties/_flash.php')
 
     .div_moto {
         display: flex;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
         justify-content: space-around;
-        margin-top: 50px;
+        margin-top: 30px;
         align-items: center;
     }
 
     .div_moto div {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -147,6 +152,31 @@ include ('parties/_flash.php')
     margin-bottom: 20px;
    }
 
+   @media only screen and (min-width: 920px) {
+
+    .p {
+        font-size: 300px;
+    }
+
+    .span {
+      top: 65%;
+      left: 45%;
+      transform: translateX(100%);
+      font-size: 100px;
+      
+    }
+
+    .div_moto {
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 50px;
+    }
+
+    .div_moto div {
+        display: flex;
+        width: 50%;
+    }
+}
 </style>
 
 <div class="lax"></div>

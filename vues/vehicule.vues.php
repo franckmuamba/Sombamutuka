@@ -78,23 +78,24 @@
     padding: 14px;
    }
 
+   
    .index 
    {
-    color: rgb(0, 0, 0);
-    width: 100%;
+     color: rgb(0, 0, 0);
+     width: 100%;
     height: 700px;
     margin-top:-68px;
     position: relative;
     text-align: center;
-   }
-
-   .index img {
+  }
+  
+  .index img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-   }
-   
-   .flou {
+  }
+  
+  .flou {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -108,24 +109,77 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    font-size: 100px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff67;
+    line-height: 5rem;
+  }
+  
+  .span {
+    top: 65%;
+    left: 45%;
+    transform: translateX(100%);
+    color: #f5deb3c8;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bolder;
+    
+  }
+@media only screen and (min-width: 960px) {
 
+    
+  .index 
+   {
+     color: rgb(0, 0, 0);
+     width: 100%;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+
+      .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     font-size: 300px;
     font-weight: bold;
     padding: 10px;
     color: #ffffff67;
     line-height: 5rem;
-    }
-
-    .span {
-      top: 65%;
-      left: 45%;
-      transform: translateX(100%);
-      color: #f5deb3c8;
-      position: absolute;
-      font-size: 100px;
-      font-weight: bolder;
-      
-    }
+  }
+  
+  .span {
+    top: 65%;
+    left: 45%;
+    transform: translateX(100%);
+    color: #f5deb3c8;
+    position: absolute;
+    font-size: 100px;
+    font-weight: bolder;
+    
+  }
+ 
+}
 </style>
 
 
