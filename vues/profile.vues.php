@@ -89,6 +89,71 @@
             output .span--hidden{
             visibility: hidden;
             }
+
+            .panel-body {
+                height: 100%;
+                margin: 40px 0 0 0;
+            }
+
+            .card_body {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+            }
+
+            .Ul {
+                display: flex;
+                flex-direction: column;
+                margin: 0 0 0 20px;
+                padding: 0 20px 0 0;
+                border-right: 1px solid gray;
+                
+            }
+
+            .Ul .names {
+                display: flex;
+                gap: 10px;
+                font-weight: bold;
+                font-size: 20px;
+                margin: 14px 0 0 0;
+                /* align-items: center; */
+                /* justify-content: center; */
+            }
+
+            .Ul .names p {
+                margin: 0;
+            }
+
+            .Ul a {
+                text-decoration: none;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            .Ul p {
+                margin: 0;
+                color: black;
+                margin: 0;
+                font-weight: 500;
+            }
+
+            .ul_n {
+                display: flex;
+                flex-direction: column;
+                margin: 30px 0 0 0;
+                padding: 0;
+                justify-content: center;
+                /* border-top: 1px solid gray; */
+
+            }
+
+            .ul_n p {
+                margin: 0;
+                color: black;
+                margin: 0;
+                font-weight: 500;
+            }
     </style>
 
 
@@ -96,62 +161,46 @@
             <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="card border">
-                        <h5 class="card-header">Profile de <?= echap($user->prenom)?> ( <?= friends_count() ?> ami<?= friends_count() <=1 ? '' : 's' ?>)</h5>
                             <div class="panel-body">
                                 <div class="row">
-                                 <div class="col-md-5">
-                                    <?php if (!empty($_GET['id'])):?>
-                                        <?php if ($user->avatar):?>
-                                            <img src="membres/avatar/<?php echo ($user->avatar) ?>"  class="avart-md"  id="avatar" alt="photo de pofile manquante"/>
-                                        <?php else :?>
-                                            <img src="assets/img/default-user.png"  class="avart-md"  alt="photo de pofile manquantE"/>
+                                    <div class="col-md-5">
+                                        <?php if (!empty($_GET['id'])):?>
+                                            <?php if ($user->avatar):?>
+                                                <img src="membres/avatar/<?php echo ($user->avatar) ?>"  class="avart-md"  id="avatar" alt="photo de pofile manquante"/>
+                                            <?php else :?>
+                                                <img src="assets/img/default-user.png"  class="avart-md"  alt="photo de pofile manquantE"/>
+                                            <?php endif; ?>
                                         <?php endif; ?>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col-md-7">
-                                    <?php if (!empty($_GET['id']) && $_GET['id'] !== get_session('user_id')):?>
-
-                                        <?php include ('parties/_relation_links.php');?>
-
-                                    <?php endif; ?>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6" >
-
-                                    <div class="card mb-3" style="max-width: 33rem; border: none;">
-                                        <div class="card-body">
-                                            <p class="card-text">
-                                                <strong><?= echap($user->prenom) ?></strong>&ensp;<strong><?= echap($user->nom) ?></strong><br/>
-                                                <a href="mailto:<?= echap($user->email)?>"><?= echap($user->email)?></a><br/>
-                                                <?=
-                                                $user->bio ? echap($user->adresse)  : '';
-                                                ?>
-                                                -
-                                                <?=
-                                                $user->bio? echap($user->sexe) : '' ;
-                                                ?>
-                                            </p>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="card mb-3" style="max-width: 33rem; border: none;">
-                                        <div class="card-body">
-                                            <p class="card-text">
-                                                <?= echap($user->telephone) ?>
-                                                <br/>
-                                                <?= ($user->ville)?>
-                                                <br/>
+                                    <div class="col-md-7">
+                                        <?php if (!empty($_GET['id']) && $_GET['id'] !== get_session('user_id')):?>
 
-                                            </p>
-                                        </div>
+                                            <?php include ('parties/_relation_links.php');?>
+
+                                        <?php endif; ?>
                                     </div>
+
                                 </div>
+                                <div class="card mb-3" style= "border: none;">
+                                    <div class="card_body">
+                                        <ul class="Ul">
+                                            <li class="names">
+                                                <p class=""> <?= echap($user->prenom) ?></p>
+                                                <p><?= echap($user->nom) ?></p>        
+                                            </li>
+                                            <a href="mailto:<?= echap($user->email)?>"><?= echap($user->email)?></a>
+                                            <p> <?= $user->bio ? echap($user->adresse)  : ''; ?> </p>
+                                            <p>Sexe: <?= $user->bio? echap($user->sexe) : '' ; ?> </p>
+                                        </ul>
+                                        <ul class="ul_n">
+                                            <h5 class="ami">Amis: <?= friends_count() ?> ami<?= friends_count() <=1 ? '' : 's' ?></h5>
+                                            <p class="">Contact: <?= echap($user->telephone) ?> </p>
+                                            <p> Ville: <?= ($user->ville)?> </p>
+                                        </ul>
+                                    </div>
                             </div>
                             <div class="col-md-12">
-                                <h4 class="card-title">Menu biographie de <?= echap($user->nom)?></h4>
+                                <h4 class="card-title">Biographie</h4>
                                 <div class="card bg-light mb-3" style="max-width: 33rem;">
                                     <div class="card-body">
                                         <p class="card-text">
@@ -177,32 +226,30 @@
 </br></br>
 <div class="card mt-3">
     <div class="card-header text-center">
-                        <h3>
-                            <strong><a style="text-decoration: none;" href="#">MES PUBLICATIONS</a></strong>
-                        </h3>
+        <h3>
+            MES PUBLICATIONS
+        </h3>
     </div>
 </div>
 
 </br>
-            <div class="row">
-            <div class="col-md-12">
-                            <br />
-                            <div class="row">
-                            <?php if (count($microposts) !=0) :?>
-                            <?php foreach ($microposts as $micropost):?>
-                                    <?php include('parties/_microposts.php') ?>
-                                    <?php endforeach;?>
-                            <?php else :?>
-                                    <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
-                            <?php endif; ?>
-                            </div>
-                </div>
-                   
-            </div>
-            </div>
+<div class="row">
+    <div class="col-md-12">
+                    <br />
+                    <div class="row">
+                    <?php if (count($microposts) !=0) :?>
+                    <?php foreach ($microposts as $micropost):?>
+                            <?php include('parties/_microposts.php') ?>
+                            <?php endforeach;?>
+                    <?php else :?>
+                            <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
+                    <?php endif; ?>
+                    </div>
+        </div>
             
-
     </div>
+    </div>
+</div>
                     </br>  </br>  </br>
                
                

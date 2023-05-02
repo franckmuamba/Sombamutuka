@@ -74,47 +74,96 @@
    .card-header {
     border: none;
    }
-
    .discover {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 80px 90px;
-   }
-    
-   .line {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin: 0 30px;
+       }
+        
+    .line {
     display: flex;
     border: 1px solid #9f9f9e8a;
     width: 40%;
-    margin: 0 auto 70px auto;
-    text-align: center;
-    justify-self: center;
-   }
+    margin: 40px auto 10px auto;
+    }
+    
+    .discover div  {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .discover div img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+       }
+    .discover div h3 {
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        
+    }
+    
+       .discover div p {
+        display: flex;
+        color: gray;
+        line-height: 2rem;
+         align-items: center;
+        padding: 14px;
+        justify-content: center;
+       }
+    
+       .discover div a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 8px;
+        background-color: orange;
+        border-radius: 8px;
+    
+       } 
 
-   .discover div  {
-    width: 50%;
-   }
+   
+   @media only screen and (min-width: 920px) {
+       .discover {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 80px 90px;
+       }
+        
+       .line {
+        margin: 0 auto 70px auto;
+        text-align: center;
+        justify-self: center;
+       }
+    
+       .discover div  {
+        display: block;
+        width: 50%;
+        flex-direction: column;
+        justify-content: start;
+       }
 
-   .discover div h3 {
-    color: black;
-    font-size: 38px;
-    font-weight: bold;
-
-   }
-   .discover div p {
-    color: gray;
-    line-height: 1.5rem;
-    margin-bottom: 20px;
-   }
-
-   .discover div a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 8px;
-    background-color: orange;
-    border-radius: 8px;
-
+       .discover div img {
+        width: 100%;
+        height: 100%;
+       }
+    
+       .discover div h3 {
+        font-size: 38px;
+    
+       }
+       .discover div p {
+        line-height: 1.5rem;
+        margin-bottom: 20px;
+        padding-left: 0;
+       }
    }
 
    
@@ -153,7 +202,8 @@
     </div>
     <div>
         <h3>Avec nous?</h3>
-        <p>Gagnez votre temps avec sombamutuka, nous avons tous ces dont vous avez besoin, nos services de ventes sont hors pair,
+        <p>
+            Gagnez votre temps avec sombamutuka, nous avons tous ces dont vous avez besoin, nos services de ventes sont hors pair,
             n'hesitez pas de visiter notre page pour en savoir plus
         </p>
         <a class="lien_v"href="vehicule.php">Nos offres</a>

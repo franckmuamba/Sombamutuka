@@ -620,17 +620,6 @@ section#indexmoteurs
     background-image: url(img/bannieremoteur.jpg);
 }
 
-.row .machin
-{
-
-    background-color: red;
-    margin: -41px 0px;
-    z-index: 1;
-    border-bottom: none;
-    border: 2px solid red
-    
-}
-
 #boiterecherchecouleur
 {
     width: 107%;
