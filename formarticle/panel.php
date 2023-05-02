@@ -1,7 +1,7 @@
 
 <div class="col-md-12 col-sm-12" id="tab">
     <div class="showcase-left" id="home">
-        <div class="h-100 p-5 rounded-3" style="color:black; border:none;    box-shadow: 0 8px 24px rgba(0, 32, 63, .45), 0 8px 8px rgba(0, 32, 63, .45); background-color:rgba(0, 0, 0, 0.03);" >
+        <div class="h-100 p-5 rounded-3 shadow p-3 mb-5 rounded" style="color:black; border:none; background-color:rgba(0, 0, 0, 0.03);" >
             <div class="bd-example">
 
                     <nav>

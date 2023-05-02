@@ -21,6 +21,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/4a9560a5d2.js" crossorigin="anonymous"></script>
 
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
    
   
     <script>

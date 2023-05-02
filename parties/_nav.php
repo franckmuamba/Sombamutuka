@@ -6,7 +6,23 @@ $q->execute([get_session('user_id')]);
 $notifications_count = $q->rowCount();
 ?>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #1763AF;" id="navbar">
+<style>
+
+    .navbar {
+        padding: 14px 0;
+    }
+    .navbar-nav {
+        font-weight: bold;
+    }
+
+    .dropdown-menu {
+        background-color: #00a5bf;
+        border: none;
+    }
+
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #00a5bf;" id="navbar">
     <a class="navbar-brand" href="index.php"><img src="img/logo9.png" style="width:100%; height:60px; margin: -12px 25px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,9 +34,8 @@ $notifications_count = $q->rowCount();
          
         </ul>
 
-        <ul class="navbar-nav mr-auto">
-        
-                      <li class="nav-item">
+        <ul class="navbar-nav mr-auto">                      
+        <li class="nav-item">
                         <a class="nav-link <?= set_active('index') ?>" href="index.php ">Accueil</a>
                     </li>
                    
@@ -29,38 +44,31 @@ $notifications_count = $q->rowCount();
                     </li>
                     <li class="nav-item">
             
-                        <a class="nav-link <?= set_active('vehicule') ?>" href="vehicule.php ">Véhicules</a>
+                        <a class="nav-link <?= set_active('vehicule') ?>" href="vehicule.php">Véhicules</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= set_active('moteurs') ?>" href="moteur.php">Moteurs</a>
+                        <a class="nav-link <?= set_active('moteur') ?>" href="moteur.php">Moteurs</a>
                     </li>
-                    
-                   
                     <li class="nav-item">
                         <a class="nav-link <?= set_active('apropos') ?>" href="apropos.php ">A propos</a>
                     </li>
-                    
-                    
-                   
-            
+
                 <?php if (is_logged_in()):?>
-                <li class="dropdown">
+                        <li class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
                             </a>
-
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
-
                                 <a class="dropdown-item <?= set_active('profile') ?>"  href="profile.php?id=<?= get_session('user_id') ?>">Ajouter article</a>
                                 <a class="dropdown-item <?= set_active('modifier_user') ?>" href="modifier_user.php" >Modifier profile</a>
                                 <a class="dropdown-item <?= set_active('index') ?>" href="list_users.php" >Membres</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item <?= set_active('deconnexion') ?>" href="deconnexion.php" >Déconnexion</a>
                             </div>
-                </li>
-            <?php else: ?>
-                <li class="nav-item dropdown">
+                    </li>
+                 <!-- MENU SIGN IN SIGN UP -->
+                <?php elseif(!is_logged_in()): ?>
+                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Signup/Login
                       </a>
@@ -75,7 +83,7 @@ $notifications_count = $q->rowCount();
                         </li>
                         
                       </ul>
-                    </li>
+                </li>
               
             <?php endif;?>
         </ul>

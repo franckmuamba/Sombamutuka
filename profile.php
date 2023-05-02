@@ -10,6 +10,8 @@ require ("includes/constants.php");
 if(!empty($_GET['id']))
 {
     $user = find_user_by_id($_GET['id']);
+    //var_dump($user);
+    //die();
 
     if(!$user)
     {
@@ -24,8 +26,8 @@ if(!empty($_GET['id']))
         $infoUtils = $qr-> fetch(PDO::FETCH_OBJ);
         $_SESSION['avatar'] = $infoUtils->avatar;
 
-        $q = $bd->prepare("SELECT U.id user_id, U.prenom, U.email, U.avatar,
-                             M.id, M.marque, M.couleur, M.km, M.transmission, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
+        $q = $bd->prepare("SELECT U.id, DATEDIFF( M.dateEnd, Now() ) AS nombreJour, U.prenom, U.email, U.avatar,
+                             DATEDIFF(M.dateEnd, M.created_at ) AS nombre, M.user_id, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
                              FROM users U, microposts M
                              WHERE M.user_id = U.id
                              AND M.user_id = :user_id

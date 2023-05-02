@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('filtres/visiteur_filtre.php');
+//require ('filtres/visiteur_filtre.php');
 require ('config/database.php');
 require ('includes/fonctions.php');
 require ('includes/constants.php');
@@ -12,11 +12,12 @@ if(isset($_POST['login']))
 {
     if(pas_vide(['identifiant','mdp']))
     {
+        
 
         $error=[];
 
         extract($_POST);
-
+        //CONNEXION USERS 
         $q = $bd ->prepare("select id, prenom from users
         where (prenom = :identifiant or email = :identifiant ) and mdp = :mdp and active = '1' ");
 
@@ -35,7 +36,17 @@ if(isset($_POST['login']))
             $_SESSION['prenom'] = $user->prenom;
             $_SESSION['email'] = $user->email;
             $_SESSION['avatar'] = $user->avatar;
-            rediriger_vers_ou('profile.php?id='.$user->id);
+
+            if($_SESSION['user_id']=='294')
+            {
+                rediriger_vers_ou('admin.php?id='.$user->id);
+            }
+            else
+            {
+                rediriger_vers_ou('profile.php?id='.$user->id);
+            }
+
+            
         }
         else
         {
