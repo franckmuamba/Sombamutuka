@@ -17,7 +17,7 @@ include ('parties/_flash.php')
     <div class=" flou"></div>
     <p class="p">LA COURSE</p>
     <p class="span">ᄂЦXΣ</p>
-    <img src="img/mt2.jpeg" alt=" moto image">
+    <img src="img/a.webp" alt=" moto image">
     <!-- <div class="container">
         <?php
         //include ('parties/_pubentetemotos.php')
