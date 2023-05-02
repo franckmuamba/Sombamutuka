@@ -216,6 +216,37 @@
 
                 <div class="col-md-3" id="bloquemarquegauche">
                     <div class="card shadow mt-3">
+                    <div class="card-header">
+                          <div class="list-group">
+                              <div class="card-header">
+                                    <h5>Rechercher</h5>
+                                </div>
+                          </div>
+                         </div>
+                      <div class="card-body">
+                                    <div class="dropdown-divider"></div>
+                                    <div class="form-group">
+                                                <label for="name">Index à rechercher<span class="text-danger"></span></label>
+                                                <input type="text" value="" name="index" id="index" class="form-control" required="required"/>
+                                            </div>
+                                    <form method="post">
+                                        <input type="submit" class="btn btn-primary" name="chercheIndex" value="Rechercher" />
+                                        <div class="form-group">
+                                        <label>Date début</label>
+                                            <input type="date" name="bday1" max="3000-12-31" min="1000-01-01" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date fin</label>
+                                        <input type="date" name="bday2" min="1000-01-01" max="3000-12-31"  class="form-control">
+                                        </div>
+                                    </form>
+                      </div>
+
+
+
+
+
+
                         <div class="card-header">
                                 <div class="card-header">
                                     <h5>RANGE PRIX</h5>
@@ -350,7 +381,7 @@
                     </div>
                     <div class="col-md-9">
                         <br />
-                        <div class="row filter_data">
+                        <div class="row filter_data" id="seachArticle">
 
                         </div>
                     </div>
@@ -358,15 +389,107 @@
             </div>
         </div></br></br>
 
-        
-
-
-
-
-
-
 
 </div>  </br></br></br>
+
+<script>
+var url = 'ajax/searchArticle.php';
+
+$('#index').on('keyup', function ()
+{
+    var query = $(this).val();
+    
+    if (query.length > 0)
+    {
+        $.ajax({
+            type : 'POST',
+            url: url,
+            data: {
+                query: query
+            },
+
+            success: function (data) {
+                $("#seachArticle").html(data).show();
+            }
+        });
+    }
+    else
+    {
+                //("#display-results").hide();
+                //$('.filter_data').html(data);
+
+                
+            $(document).ready(function(){
+
+        filter_data();
+
+        function filter_data()
+        {
+            $('.filter_data').html('<div id="loading"></div>')
+            var action = 'fetch_data';
+            var minimum_price = $('#hidden_minimum_price').val();
+            var maximum_price = $('#hidden_maximum_price').val();
+            var marque = get_filter('marque');
+            var couleur = get_filter('couleur');
+            var modele = get_filter('modele');
+
+            $.ajax({
+                url: "recherche_data_accueil.php",
+                method: "POST",
+                data:{action:action, minimum_price:minimum_price,maximum_price:
+                maximum_price, marque:marque, couleur:couleur, modele:modele},
+                success:function(data){
+                    //var_dump(data);
+                    //die();
+                    $('.filter_data').html(data);
+                }
+            })
+
+        }
+
+        function get_filter(class_name)
+        {
+            var filter = [];
+
+            $('.'+class_name+':checked').each(function(){
+                filter.push($(this).val());
+
+            });
+            return filter;
+        }
+        $('.common_selector').click(function()
+        {
+            filter_data();
+        });
+
+        $('#price_range').slider({
+            range:true,
+            min:1000,
+            max:65000,
+            values:[1000, 65000],
+            step:500,
+            stop:function(event, ui)
+            {
+                $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+                $('#hidden_minimum_price').val(ui.values[0]);
+                $('#hidden_maximum_price').val(ui.values[1]);
+                filter_data();
+
+
+            }
+        });
+
+        $( function() {
+        $( "#slider" ).slider();
+        } );
+
+
+        });
+
+                
+    }
+});
+</script>
 
 
 <style>
@@ -484,6 +607,8 @@
 <!-- ------------------------------------------------------ -->
 <!--FIN  INSERTION DE PLUSIEURS IMAGES DANS LA BD AVEC AJAX     -->
 <!-- --------------------------------------------------------->
+
+
 
 
 

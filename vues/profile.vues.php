@@ -93,7 +93,7 @@
 
 
     <div class="container">
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="card border">
                         <h5 class="card-header">Profile de <?= echap($user->prenom)?> ( <?= friends_count() ?> ami<?= friends_count() <=1 ? '' : 's' ?>)</h5>

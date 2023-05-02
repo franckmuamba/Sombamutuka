@@ -146,8 +146,7 @@
     <?php
     include ('parties/_error.php')
     ?>
-    <div class="machin">           
-    </div>  
+    
 </div>
 
 
@@ -193,10 +192,10 @@
 
 <div class="bg-dark text-secondary px-4 py-5 text-center" style="background-color: #F1F1F3;" id="black">
     <div class="py-5">
-      <h1 class="display-5 fw-bold text-white">Les plus récents </h1>
+      <h1 class="display-5 fw-bold text-white">TOP MODELES </h1>
       <div class="row" >
         <div class="col-md-3 col-sm-3">
-            <div class="info-right">
+            <div class="info-righ">
                         <div class="card" style="width: 100%; background-color: #F8F9FA; color: #706F6F;">
                             <img class="card-img-top" src="img/voiturehome2.jpg" alt="Card image cap">
                             <div class="card-body">
@@ -208,7 +207,7 @@
             </div>
         </div>
         <div class="col-md-3 col-sm-3">
-        <div class="info-left">
+        <div class="info-lef">
                     <div class="card" style="width: 100%; background-color: #F8F9FA; color: #706F6F;">
                       <img class="card-img-top" src="img/voiturehome.jpg" alt="Card image cap">
                       <div class="card-body">
@@ -221,7 +220,7 @@
         </div>
        
         <div class="col-md-3 col-sm-3">
-            <div class="info-left-2">
+            <div class="info-left-">
                         <div class="card" style="width: 100%; background-color: #F8F9FA; color: #706F6F;">
                         <img class="card-img-top" src="img/car.jpg" alt="Card image cap">
                         <div class="card-body">
@@ -232,18 +231,7 @@
                         </div>
                     </div>
             </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="info-right-2">
-                        <div class="card" style="width: 100%; background-color: #F8F9FA; color: #706F6F;">
-                            <img class="card-img-top" src="img/faces.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">EXPOSTION</h5>
-                                <p class="card-text">Nouveautés</p>
-                                <a href="#" class="btn btn-primary">Lire plus..</a>
-                            </div>
-                        </div>
-            </div>
-        </div>
+    
 
       </div>
     </div>
@@ -252,4 +240,6 @@
 <br><br>
 <?php include ('parties/_animationsblock.php'); ?>
 <?php include ('parties/_footerp.php'); ?>
+<!-- Animations des blocks -->
+
 <!-- Animations des blocks -->

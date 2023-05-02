@@ -131,8 +131,28 @@
                                              
                                             </div>
                                             <div class="form-group  col-md-6">
-                                                <label for="localisation" class="sr-only">Localisation</label>
-                                                <input name="localisation" id="localisation" rows="3" class="form-control" placeholder="Localisation" maxlength="500" minlength="3"></input>
+                                                <label for="province" class="sr-only">Province</label>
+                                                <input name="province" id="province" rows="3" class="form-control" placeholder="Province" maxlength="500" minlength="3"></input>
+                                            </div>
+                                            <div class="form-group  col-md-6">
+                                                <label for="ville" class="sr-only">Ville</label>
+                                                <input name="ville" id="ville" rows="3" class="form-control" placeholder="Ville" maxlength="500" minlength="3"></input>
+                                            </div>
+                                            <div class="form-group  col-md-6">
+                                                <label for="commune" class="sr-only">Commune</label>
+                                                <input name="commune" id="commune" rows="3" class="form-control" placeholder="Commune" maxlength="500" minlength="3"></input>
+                                            </div>
+                                            <div class="form-group  col-md-6">
+                                                <label for="quartier" class="sr-only">Quartier</label>
+                                                <input name="quartier" id="quartier" rows="3" class="form-control" placeholder="Quartier" maxlength="500" minlength="3"></input>
+                                            </div>
+                                            <div class="form-group  col-md-6">
+                                                <label for="reference" class="sr-only">Référence</label>
+                                                <input name="reference" id="reference" rows="3" class="form-control" placeholder="Référence" maxlength="500" minlength="3"></input>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="description" class="sr-only">Statut</label>
+                                                <textarea name="description" id="content" rows="3" class="form-control" placeholder="Donnez la description de votre article !" maxlength="500" minlength="3"></textarea>
                                             </div>
                                             <div class="form-group status-post-submit">
                                                     
