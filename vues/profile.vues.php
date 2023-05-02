@@ -226,32 +226,30 @@
 </br></br>
 <div class="card mt-3">
     <div class="card-header text-center">
-                        <h3>
-                            <strong><a style="text-decoration: none;" href="#">MES PUBLICATIONS</a></strong>
-                        </h3>
+        <h3>
+            MES PUBLICATIONS
+        </h3>
     </div>
 </div>
 
 </br>
-            <div class="row">
-            <div class="col-md-12">
-                            <br />
-                            <div class="row">
-                            <?php if (count($microposts) !=0) :?>
-                            <?php foreach ($microposts as $micropost):?>
-                                    <?php include('parties/_microposts.php') ?>
-                                    <?php endforeach;?>
-                            <?php else :?>
-                                    <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
-                            <?php endif; ?>
-                            </div>
-                </div>
-                   
-            </div>
-            </div>
+<div class="row">
+    <div class="col-md-12">
+                    <br />
+                    <div class="row">
+                    <?php if (count($microposts) !=0) :?>
+                    <?php foreach ($microposts as $micropost):?>
+                            <?php include('parties/_microposts.php') ?>
+                            <?php endforeach;?>
+                    <?php else :?>
+                            <p>Cet utilisateur n'a pas de statut pour l'instant... </p>
+                    <?php endif; ?>
+                    </div>
+        </div>
             
-
     </div>
+    </div>
+</div>
                     </br>  </br>  </br>
                
                
