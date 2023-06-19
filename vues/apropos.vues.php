@@ -13,18 +13,16 @@ include ('parties/_error.php')
 include ('parties/_flash.php')
 ?>
 
-<section id="indexapropos" class="img-fluid">
-    
-    <img src="img/apropos.jpg" class="img-fluid" alt="...">
-    
-</section>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/heroes/">
 
 
 
 
     <style>
+       body {
+        /* border: 1px solid red; */
+        overflow-x: hidden;
+    }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -78,10 +76,64 @@ include ('parties/_flash.php')
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .index 
+   {
+     color: rgb(0, 0, 0);
+     width: 100%;
+    height: 700px;
+    margin-top:-78px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+
+      .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 100px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff67;
+    line-height: 5rem;
+  }
+  
+  .spa {
+    top: 65%;
+    transform: translateX(50%);
+    color: #f5deb3c8;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bolder;
+    
+  }
     </style>
 
   
     
+<section class="index" >
+    <div class=" flou"></div>
+    <p class="p">Somba MTK</p>
+    <p class="spa">qui nous sommes</p>
+    <img src="assets/img/ab.jpeg" alt="time home image">
+  </section>
 <main>
 
   <div class="px-4 pt-5 my-5 text-center border-bottom">

@@ -4,31 +4,29 @@
 <?php include('parties/_header.php'); ?>
 
 <script>
-$(document).ready(function () {
-	$('#example').DataTable({
-        "language": {
-          
-            //"lengthMenu": "Afficher _MENU_ articles par page",
-            "lengthMenu": "...",
-            "zeroRecords": "Aucune donnée trouvée - désolé",
-            "info": "Afficher page _PAGE_ sur _PAGES_",
-            "infoEmpty": "Pas d'articles disponibles",
-            "infoFiltered": "(filter à partir de _MAX_ total artciles)",
-            "search": "Rechercher..",
+  $(document).ready(function () {
+    $('#example').DataTable({
+          "language": {
             
-            "paginate": {
-            "first":      "Premier",
-            "last":       "Dernier",
-            "next":       "Suivant",
-            "previous":   "Précédent"
-             },
+              //"lengthMenu": "Afficher _MENU_ articles par page",
+              "lengthMenu": "...",
+              "zeroRecords": "Aucune donnée trouvée - désolé",
+              "info": "Afficher page _PAGE_ sur _PAGES_",
+              "infoEmpty": "Pas d'articles disponibles",
+              "infoFiltered": "(filter à partir de _MAX_ total artciles)",
+              "search": "Rechercher..",
+              
+              "paginate": {
+              "first":      "Premier",
+              "last":       "Dernier",
+              "next":       "Suivant",
+              "previous":   "Précédent"
+              },
+              
             
-          
-        }
-    });
-});
-
-
+          }
+      });
+  });
 </script>
 
 
@@ -114,7 +112,7 @@ $(document).ready(function () {
      color: rgb(0, 0, 0);
      width: 100%;
     height: 700px;
-    margin-top:-68px;
+    margin-top:-78px;
     position: relative;
     text-align: center;
   }

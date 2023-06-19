@@ -9,20 +9,11 @@
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
-<?php
-
-include ('parties/_flash.php')
-?>
 <section class="index">
     <div class=" flou"></div>
     <p class="p">LA COURSE</p>
     <p class="span">ᄂЦXΣ</p>
     <img src="img/a.webp" alt=" moto image">
-    <!-- <div class="container">
-        <?php
-        //include ('parties/_pubentetemotos.php')
-        ?>
-    </div> -->
 </section>
 <div class="row">
     <?php
@@ -32,6 +23,10 @@ include ('parties/_flash.php')
 </div>
 
 <style>
+    body {
+        /* border: 1px solid red; */
+        overflow-x: hidden;
+    }
     #post_detail
     {
        font-family: Arial, Helvetica, sans-serif;
@@ -56,10 +51,10 @@ include ('parties/_flash.php')
     color: rgb(0, 0, 0);
     width: 100%;
     height: 700px;
-    margin-top:-68px;
+    margin-top:-78px;
     position: relative;
     text-align: center;
-    /* border: 3px solid red: */
+    /* border: 3px solid red; */
    }
 
    .index img {
@@ -88,6 +83,8 @@ include ('parties/_flash.php')
         padding: 10px;
         color: #ffffff67;
         line-height: 5rem;
+        /* border: 1px solid red; */
+        width:100%;
     }
 
     .span {
@@ -212,7 +209,7 @@ include ('parties/_flash.php')
 
 ?>
 <!-- FIN TABLEAU ALL DATA WITH FILTER  -->
-<br><br><br>
+<!-- <br><br><br> -->
 
 
 <div class="bg-dark text-secondary px-4 py-5 text-center" style="background-color: #F1F1F3;" id="black">
