@@ -7,9 +7,10 @@ require ('../config/database.php');
     {
 
         $id = $_GET['marquevehiculeID'];
-        //var_dump($id);
-        //die();
-
+        $modeleall = $_GET['modelevehiculeID'];
+        
+        
+     
         $q= $bd->query("SELECT * FROM modelevehicule WHERE cond_nom='$id'");
         $modeles = $q->fetchAll(PDO::FETCH_OBJ);
        //var_dump($modeles);
@@ -21,14 +22,16 @@ require ('../config/database.php');
             {
                
                 echo '<option>'.$modele->nommod. '</option>';
-
+            
             }
          }
          else
          {
             echo '<option> Pas de modèle disponible </option>';
          }
+        
         }
+      
     else
     {
         echo '<h1>Il y a erreur </h1>';

@@ -48,6 +48,15 @@ if($statement4->execute()){
 }
 // USERS INACTIVES
 
+//USERS IN QUARANTAINE
+$query44 = "SELECT * FROM users WHERE quarantaine='1'"; 
+$statement44 = $bd->prepare($query44);
+if($statement44->execute()){
+    $result44 = $statement44->fetchAll();
+    $usersInQuarantaine = count($result44);
+}
+// USERS QUARANTAINE
+
 // POSTS VALIDATED
 $query5 = "SELECT * FROM microposts WHERE valide='1'"; 
 $statement5 = $bd->prepare($query5);
@@ -65,6 +74,15 @@ if($statement6->execute()){
     $notYetvalidPosts = count($result6);
 }
 // POSTS NOT YET VALIDATED
+
+// POSTS NOT YET VALIDATED AND VALIDATED
+$queryAB = "SELECT * FROM microposts WHERE valide='0' OR valide='1'"; 
+$statementAB = $bd->prepare($queryAB);
+if($statementAB->execute()){
+    $resultAB = $statementAB->fetchAll();
+    $totalPosts = count($resultAB);
+}
+// POSTS NOT YET VALIDATED AND VALIDATED
 
 
 // POSTS ARCHIVED

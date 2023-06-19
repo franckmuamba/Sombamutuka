@@ -14,7 +14,7 @@ extract($_POST);
     //AND  DATEDIFF(M.dateEnd, Now()) >0
 
 $q = $bd->prepare('SELECT U.id, M.user_id, U.prenom, U.email, U.avatar, U.telephone,
-DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
+DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.description, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
  FROM users U, microposts M
  WHERE M.user_id = U.id 
  AND M.valide = 1

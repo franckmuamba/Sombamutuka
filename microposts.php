@@ -29,29 +29,30 @@ else
 
 if (isset($_POST['publier']))
 {
-    //var_dump($_FILES);
-    //die();
-    //if (isset($_FILES['avatar']) and !empty($_FILES['avatar']['name']))
-    //{
-
-        $taillemax = 52428805;
+        $taillemax2 = 10245042; // taille en octets de 12 M
         $extensionValides = array('png','jpg', 'jpeg', 'gif', 'webp');
 
-        if ($_FILES['image']['size'])
-        {
-            //$extensionLoaded = strtolower(substr(strchr($_FILES['avatar']['name'], '.'), 1)) ;
-            //$nomImage = $_FILES['avatar']['name'];
+        if (($_FILES['image']['size']) and !empty($_FILES['image']['name']))
+        {   //NOMBRE D IMAGES
+            $nombre = count($_FILES['image']['name']);
+            if($nombre < 3)
+            {
+                set_flash('Ajouter au moins 3 images','warning');
+                echo 'Ajouter au moins 3 images';
+            }
+            else if($nombre <= 20)
+            {
+               // echo 'Plus de 3 images';
+            // TAILLE D IMAGES NE DEPASSANT PAS 12 M
+            //$_FILES['avatar']['size']<= $taillemax
+                //if(($_FILES['image']['size']) < 55542169874521)
+                //{
+        
+                    //echo 'Dans les normes';
+                    // NOMBRE D IMAGES AU MOINS 3
+                    // TAILLE IMAGES MAX AU MAX 12 M
+                    $categorievehicule ='VEHICULE';
 
-
-            //if (in_array($extensionLoaded, $extensionValides))
-           // {
-              //  $chemin = "membres/imagePosts/".$nomImage;
-                $categorievehicule ='VEHICULE';
-
-               // $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
-
-              //  if ($resultat)
-               // {
                     if(!empty($_POST['marquevehicule']) and ($_POST['modelevehicule'])  and ($_POST['couleurvehicule']) and ($_POST['km']) and ($_POST['transmission']) )
                     {
                         //var_dump($_POST);
@@ -59,8 +60,9 @@ if (isset($_POST['publier']))
                         extract($_POST);
                         $validite = 0;
 
-                        $rq = $bd->prepare('INSERT INTO microposts(marque,modele,couleur,km,transmission,prix,annee,localisation,user_id,categorie,valide)
-                         values(:marque,:modele,:couleur,:km,:transmission,:prix,:annee,:localisation,:user_id,:categorie,:valide)');
+                        $rq = $bd->prepare('INSERT INTO microposts(marque,modele,couleur,km,transmission,prix,annee,
+                        description,province, ville, commune, reference, user_id,categorie,valide)
+                         values(:marque,:modele,:couleur,:km,:transmission,:prix,:annee,:description,:province,:ville,:commune,:reference,:user_id,:categorie,:valide)');
                         $rq->execute([
                             'marque'=>$marquevehicule,
                             'modele'=>$modelevehicule,
@@ -69,12 +71,14 @@ if (isset($_POST['publier']))
                             'transmission'=>$transmission,
                             'prix'=>$prix,
                             'annee'=>$anneefabrication,
-                            'localisation'=>$localisation,
+                            'description'=>$description,
+                            'province'=>$province,
+                            'ville'=>$ville,
+                            'commune'=>$commune,
+                            'reference'=>$reference,
                             'user_id'=>get_session('user_id'),
                             'categorie'=>$categorievehicule,
                             'valide'=>$validite
-                             
-                            
                         ]);
 
                         $user_id = get_session('user_id');
@@ -118,31 +122,31 @@ if (isset($_POST['publier']))
                         //die();
 
 
-                        set_flash('Votre statut a été mis à jour','info');
+                    set_flash('Votre statut a été mis à jour','info');
                     }
                     else
                     {
-                        set_flash('Aucun contenu n a été fourni','warning');
+                        set_flash('Remplissez tous les champs','warning');
                     }
-
-                    //set_flash('Félicitations, votre profil a été mis à jour','succes');
                 //}
-               // else
-               // {
-                    //echo $error[] = "Erreur lors de l'importation du fichier";
-                  //  set_flash('Erreur lors de l\'importation du fichier','warning');
+                //else
+                //{
+                    //echo 'La taille des vos images ne doit pas dépasser 12 M';
+                    //var_dump($_FILES['image']['size']) ;
+                   // set_flash('La taille des vos images ne doit pas dépasser 12 M','warning');
                // }
-            //}
-          //  else
-          //  {
-                //echo $error[] = "L'extension de votre photo est invalide";
-            //    set_flash('L\'extension de votre photo est invalide','warning');
-          //  }
+                
+            }
+            else
+            {
+                set_flash('Pas plus de 20 images ','warning');
+            }
+                    
         }
-       // else
-      //  {
-        //   set_flash('La taille du fichier ne doit pas dépasser 5 M','warning');
-      //  }
+       else
+       {
+         set_flash('Aucun fichier image n a été fourni','warning');
+       }
    // }
     //else
   //  {

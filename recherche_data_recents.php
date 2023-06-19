@@ -4,10 +4,10 @@ require ('config/database.php');
 
 //$query = "SELECT * FROM images ORDER BY image_id DESC LIMIT 10";
 
-$query = ("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
-    M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
-    FROM users U, microposts M
-    WHERE M.user_id = U.id LIMIT 6");
+$query = ("SELECT U.id, U.prenom, U.email, U.avatar, U.telephone, M.id, M.marque, M.couleur, M.modele, M.annee, M.km, M.transmission, M.prix, M.description, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost 
+FROM users U, microposts M 
+WHERE M.user_id = U.id ORDER BY M.id DESC LIMIT 7");
+
 
 $statement = $bd->prepare($query);
 
@@ -15,9 +15,7 @@ $output = '<div class=row>';
 
 if($statement->execute())
 {
-    
         $result = $statement->fetchAll();
-
         foreach($result as $row)
         {
            // var_dump($row);
@@ -30,7 +28,6 @@ if($statement->execute())
             ';
         }
 }
-
 $output .= '</div>';
 
 echo $output;

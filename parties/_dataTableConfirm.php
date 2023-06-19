@@ -1,3 +1,16 @@
+<style>
+         .cat img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+               }
+               .cat {
+                height:100px;
+                width:120px;
+                background-color:white;
+               }
+</style>
+
 <div class="container" id="filtre" style="background-color: #E8F0FE; padding:6px;">
 
 <table id="example" class="display" style="width:100%; font-size:12px;">
@@ -17,7 +30,7 @@
         <tbody>
         <?php
               $q = $bd->prepare("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
-               DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.valide, M.dateEnd, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
+               DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.valide, M.dateEnd, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.prix, M.description, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
               FROM users U, microposts M
               WHERE M.user_id = U.id
              
@@ -31,7 +44,7 @@
 
             $posts =  $q->fetchAll(PDO::FETCH_OBJ);
 
-
+       
 
             //var_dump($posts);
            // die();
@@ -48,7 +61,7 @@
                 <td><?= $post->dateEnd ?></td>
                 <td><?= $post->nombreJour ?></td>
                 <td><?= $post->modele ?></td>
-                <td><img src="membres/imagePosts/<?= $post->imagePost ?>" class="media-body img-thumbnail" style="width:150px; height:100px; "></td>
+                <td><img src="membres/imagePosts/<?= $post->imagePost ?>" class="media-body img-thumbnail cat" ></td>
                 <td><?= $post->valide ?></td>
                 <td>
                 <button type="button" name="view" class="btn btn-info btn-sm view" id="<?= $post->id ?>">

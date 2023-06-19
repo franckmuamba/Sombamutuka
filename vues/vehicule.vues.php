@@ -3,10 +3,40 @@
 <!-- /container -->
 <?php include('parties/_header.php'); ?>
 
+<script>
+$(document).ready(function () {
+	$('#example').DataTable({
+        "language": {
+          
+            //"lengthMenu": "Afficher _MENU_ articles par page",
+            "lengthMenu": "...",
+            "zeroRecords": "Aucune donnée trouvée - désolé",
+            "info": "Afficher page _PAGE_ sur _PAGES_",
+            "infoEmpty": "Pas d'articles disponibles",
+            "infoFiltered": "(filter à partir de _MAX_ total artciles)",
+            "search": "Rechercher..",
+            
+            "paginate": {
+            "first":      "Premier",
+            "last":       "Dernier",
+            "next":       "Suivant",
+            "previous":   "Précédent"
+             },
+            
+          
+        }
+    });
+});
+
+
+</script>
+
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
 <?php include ('parties/_flash.php'); ?>
@@ -220,7 +250,7 @@
         </div>
         <div class="col-md-4 col-sm-4 card">
               <img src="img/m2.jpeg" style="width: 200px; height:200px;">
-              <h3>Vente accessoirs </h3>
+              <h3>Vente accessoires </h3>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum non molestiae incidunt voluptas dicta ullam repellat veritatis ab, beatae esse harum eveniet.</p>
         </div>
     </div>

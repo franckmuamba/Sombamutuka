@@ -1,9 +1,15 @@
-
+<style>
+    #lien:hover {
+		background-color: red!important;
+	}
+  </style>
+  
+	
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<a id="lien" href="#" class="brand" >
 			<i class='bx bxs-smile'></i>
-			<span class="text">Admin Root</span>
+			<span class="text" >Admin Root</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">

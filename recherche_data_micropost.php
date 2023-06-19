@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 include ("filtres/auth_filtre.php");
 include ("config/database.php");
 include("includes/fonctions.php");
@@ -25,7 +23,7 @@ if(!empty($user_id))
 
 
 $query = "SELECT U.id, U.prenom, U.email, U.avatar, U.telephone,
-                             DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.id, M.user_id, M.marque, M.couleur, M.km, M.transmission, M.modele, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
+                             DATEDIFF( M.dateEnd, Now() ) AS nombreJour, M.id, M.user_id, M.marque, M.couleur, M.km, M.transmission, M.modele, M.description, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
                              FROM users U, microposts M
                              WHERE M.user_id = U.id
                              AND M.user_id = :user_id
@@ -73,7 +71,7 @@ if($statement->execute(['user_id'=>$user_id]))
                             </button>
                         </div>
                         <div class="col-md-6">
-                            <a href="detail.php?id='.$row['id'].'  type="button"  class="btn btn-secondary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
+                            <a href="detailMicropost.php?id='.$row['id'].'  type="button"  class="btn btn-secondary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
                                 Ouvrir
                             </a>
                         </div>
@@ -127,26 +125,3 @@ echo $output;
 }
 ?>
 
-<script>
-    $(document).ready(function(){
-        function fetch_postdata(id)
-        {
-            $.ajax({
-                url: "fecth_details.php",
-                method: "POST",
-                data: {id:id},
-                success:function(data)
-                {
-                    $('#post_modal').modal('show');
-                    $('#post_detail').html(data);
-                }
-            })
-        }
-
-        $(document).on('click', '.view', function(){
-            var id=$(this).attr("id");
-            fetch_postdata(id);
-        });
-    });
-
-</script>

@@ -3,7 +3,9 @@
 <?php include('config/database.php'); ?>
 <?php include('includes/fonctions.php'); ?>
 <?php include('parties/_header.php'); ?>
+<?php //include('parties/_carouselModal2.php');?>
 <?php include('parties/_caroussel.php'); ?>
+
 
 <style>
    .index 
@@ -11,7 +13,7 @@
     color: rgb(0, 0, 0);
     width: 100%;
     height: 700px;
-    margin-top:-68px;
+    margin-top:-72px;
     position: relative;
     text-align: center;
    }
@@ -168,10 +170,8 @@
 
    
 </style>
-
-    <br />
     <div class="index img-fluid">
-        <div class=" flou"></div>
+    <div class="flou"></div>
         <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
             <span class="span">SOMBAMUTUKA <br>
                 <span>Profitez de nos services sûrs et exclusifs</span>
@@ -195,27 +195,13 @@
     </div>
 </br></br>
 
-      
-<div class="discover">
-    <div>
-        <img src="img/temp.webp" alt="time home image">
-    </div>
-    <div>
-        <h3>Avec nous?</h3>
-        <p>
-            Gagnez votre temps avec sombamutuka, nous avons tous ces dont vous avez besoin, nos services de ventes sont hors pair,
-            n'hesitez pas de visiter notre page pour en savoir plus
-        </p>
-        <a class="lien_v"href="vehicule.php">Nos offres</a>
-    </div>
-</div>
-<div class="line"></div>
+<!--<div class="line"></div> -->
 <div class="container p-5 shadow p-3 mb-5 bg-light rounded" style="background-color: #AAAAAA;">
         <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <h3 class="h3_nouv ">NOUVEAUTÉS</h3>
                             <div class="card" style="width: 100%;">
-                                <img src="https://auto-moto.digidip.net/visit?url=https%3A%2F%2Fsf2.auto-moto.com%2Fwp-content%2Fuploads%2Fsites%2F9%2F2023%2F04%2Fjlr_reimagine_jaguar_tease_image_190423.jpg&ppref=https%3A%2F%2Fwww.auto-moto.com%2Fnouveautes&currurl=https%3A%2F%2Fwww.auto-moto.com%2Fnouveautes%2Fjaguar-land-rover-futur-seclaircit-420281.html" class="card-img-top" alt="Photo nouveauté">
+                                <img src="img/jeep1.jpg" class="card-img-top" alt="Photo nouveauté">
                                 <div class="card-body">
                                     <p class="card-text">
                                         La situation du groupe Jaguar Land Rover est assez préoccupante.
@@ -229,218 +215,311 @@
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <h3 class="h3_nouv ">ARTICLES RECENTS</h3>
-                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                    <?php echo make_slide_indicators($bd); ?>
-                    </ol>
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                        <?php echo make_slide_indicators($bd); ?>
+                        </ol>
 
-                    <div class="carousel-inner" >
-                        <?php echo make_slides($bd); ?>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
+                        <div class="carousel-inner" >
+                            <?php echo make_slides($bd); ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
 
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
 
-                </div> 
+                    </div> 
+                    
                     </div>
                           
             </div>
 </div>
 
+<style>
+    .cat img {
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+}
+.cat {
+ height:300px;
+ background-color:red;
+}
+</style>
+<script>
+    $(document).ready(function(){
+        $('#marquevehicule').on('change', function(){
+                //var marquevehiculeID= $(this).val();
+
+                var marquevehiculeID = $("#marquevehicule").val();
+                var modelevehiculeID = $("#modelevehicule").val();
+
+              if(marquevehiculeID.selectedIndex !=0)
+              {
+                $.get(
+                    "formarticle/modelevehicule.php",
+                    {marquevehiculeID: marquevehiculeID, modelevehiculeID:modelevehiculeID },
+                    function(data){
+                        $('#modelevehicule').html(data);
+                        $('#modelevehicule').html(data);
+                    }
+                );
+              }
+             
+               else(marquevehiculeID.selectedIndex == 0)
+              {
+                //alert ("ELEMENT ZERO");
+                $('#modelevehicule').html('<option>Selectionner d abord la marque</option>')
+                //$('#modelevehicule').html('<option>Selectionner d abord la marque</option>')
+                //modelevehiculeID.selectedIndex = 0;
+                //$('#modelevehicule').remove;
+                //var select = document.getElementById("DropList");
+               
+              } 
+        });
+    });
+</script>
 
 
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mt-3 card-header" id="titrearticle">
+<div class="container">
+    <div class="row shadow p-2" id="titrearticle">
+    <div class="card mt-1 card-header" >
                 <h3 class="h3_nouv">
-                    FILTRE DES ARTICLES
+                    FILTRE ET RECHERCHE
                 </h3>
+    </div>
+            <div class="form-group border rounded-2">
+                <h3 class="h3_nouv">
+                    <div class="form-group">
+                            <input type="text" value="" name="element" id="element" class="form-control" placeholder="Taper texte à rechercher.." required="required"/>
+                    </div>
+
+                </h3>
+                <div class="form-group col-md-4">
+                        <label for="type" class="">Marque vehicule :</label>
+                                                        
+                        <select class="form-select form-select-sm" name="marquevehicule" id="marquevehicule"   style="font-size:14px;">
+                            <option  disabled="" selected="">Selectionner marque..</option>
+                            <?php  
+                                   $q= $bd->query("SELECT * FROM marquevehicule");
+                                       $marques = $q->fetchAll(PDO::FETCH_OBJ);
+                                   //var_dump($marques);
+                                  // die();
+
+                                   if (count($marques) !=0) {
+                                     foreach ($marques as $marque)
+                                    {
+                            ?>
+                                     <option value="<?= $marque->nomv ?>"><?= $marque->nomv ?></option>;
+                                                                    
+                               <?php
+                                       }
+                                  }
+                            ?>  
+                                                            
+                        </select>
+                </div>
+                <div class="form-group col-md-4">
+                        <label for="type" class="">Modèle :</label>
+                        <select class="form-select form-select-sm" name="modelevehicule" id="modelevehicule" style="font-size:14px;">
+                            <option  disabled="" selected="">Selectionner modèle..</option>
+                            <option  disabled="" >Selectionner d'abord la marque</option>
+                        </select>
+                </div>
+                <div class="form-group col-md-4">
+                <label for="annee" class="">Année de fabrication </label>
+                                                            
+                                                            <select class="form-select form-select-sm" id="anneefabrication" name="anneefabrication" style="font-size:14px;" >
+                                                                <option  disabled="" selected="">Selectionner année..</option>
+                                                                <option value="2000">2000</option>
+                                                                <option value="2001">2001</option>
+                                                                <option value="2002">2002</option>
+                                                                <option value="2003">2003</option>
+                                                                <option value="2004">2004</option>
+                                                                <option value="2005">2005</option>
+                                                                <option value="2006">2006</option>
+                                                                <option value="2007">2007</option>
+                                                                <option value="2008">2008</option>
+                                                                <option value="2009">2009</option>
+                                                                <option value="2010">2010</option>
+                                                                <option value="2011">2011</option>
+                                                                <option value="2012">2012</option>
+                                                                <option value="2013">2013</option>
+                                                                <option value="2014">2014</option>
+                                                                <option value="2015">2015</option>
+                                                                <option value="2016">2016</option>
+                                                                <option value="2017">2017</option>
+                                                                <option value="2018">2018</option>
+                                                                <option value="2019">2019</option>
+                                                                <option value="2020">2020</option>
+                                                                <option value="2021">2021</option>
+                                                                <option value="2022">2022</option>
+                                                                <option value="2023">2023</option>
+                                                            </select>
+                </div>
+               
+                <div class="form-group col-md-4 center">
+                <label for="annee" class="">Range Kilométrage(km) </label>
+                                                            
+                                                            <select class="form-select form-select-sm" aria-label=".form-select-sm" id="kmMin" name="kmMin" style="font-size:14px;" >
+                                                                <option  disabled="" selected="">Km minimum..</option>
+                                                                <option value="1000">1000</option>
+                                                                <option value="6000">6000</option>
+                                                                <option value="1200">12000</option>
+                                                                <option value="22000">22000</option>
+                                                                <option value="32000">32000</option>
+                                                                <option value="52000">52000</option>
+                                                                <option value="72000">72000</option>
+                                                                <option value="100000">100000</option>
+                                                                <option value="150000">150000</option>
+                                                                <option value="200000">200000</option>
+                                                            </select>
+                                                            
+                                                            <select class="form-select form-select-sm mt-1" aria-label=".form-select-sm example" id="kmMax" name="kmMax" style="font-size:14px;" >
+                                                                <option  disabled="" selected="">Km maximum..</option>
+                                                                <option value="5000">5000</option>
+                                                                <option value="11000">11000</option>
+                                                                <option value="21000">21000</option>
+                                                                <option value="31000">31000</option>
+                                                                <option value="51000">51000</option>
+                                                                <option value="71000">71000</option>
+                                                                <option value="100000">100000</option>
+                                                                <option value="150000">150000</option>
+                                                                <option value="200000">200000</option>
+                                                                <option value="250000">250000</option>
+                                                            </select>
+                </div>
+            </div>
+            <div class="btn-group col-md-12">
+                    <input type="submit" id="submit" name="submit" value="Rechercher" class="btn btn-primary col-12 mx-auto">
+                    <input type="button" id="btnReset" class="btn btn-danger" value="Reset" onclick="Initialiser();" />
+
             </div>
 
-                <div class="col-md-3" id="bloquemarquegauche">
-                    <div class="card shadow mt-3">
-                    <div class="card-header">
-                          <div class="list-group">
-                              <div class="card-header">
-                                    <h5>Rechercher</h5>
-                                </div>
-                          </div>
-                         </div>
-                      <div class="card-body">
-                                    <div class="dropdown-divider"></div>
-                                    <div class="form-group">
-                                                <label for="name">Index à rechercher<span class="text-danger"></span></label>
-                                                <input type="text" value="" name="index" id="index" class="form-control" required="required"/>
-                                            </div>
-                                    <form method="post">
-                                        <input type="submit" class="btn btn-primary" name="chercheIndex" value="Rechercher" />
-                                        <div class="form-group">
-                                        <label>Date début</label>
-                                            <input type="date" name="bday1" max="3000-12-31" min="1000-01-01" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Date fin</label>
-                                        <input type="date" name="bday2" min="1000-01-01" max="3000-12-31"  class="form-control">
-                                        </div>
-                                    </form>
-                      </div>
-
-
-
-
-
-
-                        <div class="card-header">
-                                <div class="card-header">
-                                    <h5>RANGE PRIX</h5>
-                                </div>
-                              <div class="list-group">
-                                <input type="hidden" id="hidden_minimum_price" value="0"/>
-                                <input type="hidden" id="hidden_maximum_price" value="200000"/>
-                                <label for="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min &nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;   Max</label>
-                                <p id="price_show" class="text-center"> 1.000$ - 200.000$</p>
-                                <div id="price_range"></div>
-                            </div>
-                        </div>
-                        <?php
-                                    $r_marque = "SELECT DISTINCT(nomv) FROM marquevehicule
-                                    ORDER BY idv DESC";
-
-                                    $statement = $bd->prepare($r_marque);
-                                    $statement->execute();
-
-                                    $result = $statement->fetchAll();
-                                    $nbreMarque = count($result);
-
-                        ?>
-
-                        <div class="card-header">
-                            <p class="mt-0 mb-0 mx-3">
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    MARQUE <i class='bx bxs-down-arrow'></i>
-                                    <span class=" badge rounded-pill bg-danger">
-                                        <?= $nbreMarque ?>
-                                        <span class="visually-hidden">unread messages</span>
-                                    </span>
-                                </button>
-                            </p>
-                        </div>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body">
-                                <?php
-                                    foreach($result as $row)
-                                    {
-                                ?>     
-                                    <div class="list-group-item checkbox">
-                                        <label><input type="checkbox" class="common_selector marque" value="<?php echo $row['nomv']; ?>"/>
-                                            <?php echo $row['nomv'] ; ?>
-                                        </label>
-                                    </div>
-                                <?php
-                                    }
-
-                                ?>
-                            </div>
-                        </div>
-                        <?php
-                            $r_modele = "SELECT DISTINCT(modele) FROM microposts WHERE  modele is not null
-                            ORDER BY id DESC";
-
-                            $statement = $bd->prepare($r_modele);
-                            $statement->execute();
-
-                            $result = $statement->fetchAll();
-                             $nbreModele = count($result);
-                        ?>
-
-                        <div class="card-header">
-                            <p class="mt-0 mb-0 mx-3">
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                                    MODELE &nbsp <i class='bx bxs-down-arrow'> </i>
-                                    <span class=" badge rounded-pill bg-danger">
-                                        <?= $nbreModele ?>
-                                        <span class="visually-hidden">unread messages</span>
-                                    </span>
-                                </button>
-                            </p>
-                        </div>
-                        <div class="collapse" id="collapseExample1">
-                            <div class="card card-body">        
-                                    <?php           
-                                        foreach($result as $row)
-                                        {
-                                    ?>     
-                                        <div class="list-group-item checkbox">
-                                            <label><input type="checkbox" class="common_selector modele" value="<?php echo $row['modele']; ?>"/>
-                                                <?php echo $row['modele'] ; ?>
-                                            </label>
-                                        </div>
-                                    <?php
-                                        }
-
-                                    ?>
-
-                            </div>
-                        </div>
-
-                        <?php
-                            $r_couleur = "SELECT DISTINCT(couleur) FROM microposts
-                            ORDER BY id DESC";
-                            $statement = $bd->prepare($r_couleur);
-                            $statement->execute();
-                            $result = $statement->fetchAll();
-                            $nbreColors = count($result);
-                                           
-                        ?>
-                        <div class="card-header">
-                            <p class="mt-0 mb-0 mx-3">
-                                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                                    COULEUR &nbsp <i class='bx bxs-down-arrow'></i>
-                                    <span class=" badge rounded-pill bg-danger">
-                                        <?= $nbreColors ?>
-                                        <span class="visually-hidden">unread messages</span>
-                                    </span>
-                                </button>
-                            </p>
-                        </div>
-                        <div class="collapse" id="collapseExample2">
-                                <div class="card-body">
-                                    <?php
-                                        foreach($result as $row)
-                                        {
-                                    ?>     
-                                        <div class="list-group-item checkbox">
-                                            <label><input type="checkbox" class="common_selector couleur" value="<?php echo $row['couleur']; ?>"/>
-                                                <?php echo $row['couleur'] ; ?> 
-                                            </label>
-                                        </div>
-                                    <?php
-                                        }
-
-                                    ?>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
+    </div>
+    ..
+    <div class="card mt-3 card-header" id="titrearticle">
+                <h3 class="h3_nouv">
+                    TOUS LES ARTICLES
+                </h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                    <div class="col-md-12">
                         <br />
                         <div class="row filter_data" id="seachArticle">
 
                         </div>
                     </div>
             
-            </div>
-        </div></br></br>
+        </div>
+    </div></br></br>
 
 
 </div>  </br></br></br>
+<script>
+    $(document).ready(function(){
+        function fetch_postdata(id)
+        {
+            $.ajax({
+                url: "fecth_details.php",
+                method: "POST",
+                data: {id:id},
+                success:function(data)
+                {
+                    $('#post_modal').modal('show');
+                    $('#post_detail').html(data);
+                }
+            })
+        }
+
+        $(document).on('click', '.view', function(){
+            var id=$(this).attr("id");
+            fetch_postdata(id);
+        });
+    });
+
+</script>
+
+
+
+<script type="text/javascript">
+    function Initialiser() {
+        //var champ = document.getElementById("element");
+        var dropDown1 = document.getElementById("kmMax");
+        var dropDown2 = document.getElementById("kmMin");
+        var dropDown3 = document.getElementById("marquevehicule");
+        //var dropDown4 = document.getElementById("modelevehicule");
+        var dropDown5 = document.getElementById("anneefabrication");
+        dropDown1.selectedIndex = 0;
+        dropDown2.selectedIndex = 0;
+        dropDown3.selectedIndex = 0;
+        //dropDown4.selectedIndex = -1;
+        dropDown5.selectedIndex = 0;
+        
+       // document.getElementById("valeur_id").Reset();
+        document.getElementById("element").value="";
+
+        $('#modelevehicule')
+    .empty()
+    .append('<option selected="selected" value="test">Selectionner modèle..</option>');
+
+    }
+</script>
+
+<!-- SCRIPT RECHERCHE BOUTON  -->
+<script>
+var url2 = 'ajax/recherche_data_filtre_bouton.php';
+
+$('#submit').on('click', function ()
+{
+    $('.filter_data').html('<div id="loading"></div>')
+    
+    //var query = $(this).val();
+    var anneefab = $('#anneefabrication').val();
+    var element = $('#element').val();
+    var marquevehicule = $('#marquevehicule').val();
+    var modelevehicule = $('#modelevehicule').val();
+    var kmMin = $('#kmMin').val();
+    var kmMax = $('#kmMax').val();
+    
+    //alert (anneefab);
+   // die();
+   // if (anneefab.length > 0 )
+   // {
+        $.ajax({
+            type : 'POST',
+            url: url2,
+            data: {
+                anneefab: anneefab,
+                marquevehicule:marquevehicule,
+                modelevehicule:modelevehicule,
+                kmMin:kmMin,
+                kmMax:kmMax,
+                element:element
+
+            },
+
+            success: function (data) {
+                //alert("OUI VALIDE");
+                $("#seachArticle").html(data).show();
+               
+            }
+        });
+   // }
+});
+</script>
+
+<!-- FIN RECHERCHE BOUTON -->
+
+
+
+
 
 <script>
 var url = 'ajax/searchArticle.php';
@@ -482,12 +561,13 @@ $('#index').on('keyup', function ()
             var marque = get_filter('marque');
             var couleur = get_filter('couleur');
             var modele = get_filter('modele');
+            var anneefabrication = get_filter('anneefabrication');
 
             $.ajax({
                 url: "recherche_data_accueil.php",
                 method: "POST",
                 data:{action:action, minimum_price:minimum_price,maximum_price:
-                maximum_price, marque:marque, couleur:couleur, modele:modele},
+                maximum_price, marque:marque, couleur:couleur, modele:modele, anneefabrication:anneefabrication},
                 success:function(data){
                     //var_dump(data);
                     //die();
@@ -657,19 +737,6 @@ $('#index').on('keyup', function ()
 <!-- ------------------------------------------------------ -->
 <!--FIN  INSERTION DE PLUSIEURS IMAGES DANS LA BD AVEC AJAX     -->
 <!-- --------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <footer id="footer" class="footer-1">

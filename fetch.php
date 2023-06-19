@@ -8,31 +8,29 @@ include ("config/database.php");
 if(isset($_POST['marque'])){
 
     $marque= $_POST['marque'];
-    $couleur= $_POST['couleur'];
-    //var_dump($couleur);
+    //$couleur= $_POST['couleur'];
+    //var_dump($marque);
     //die();
   
 
     $q = $bd->prepare("SELECT U.id, user_id, U.prenom, U.email, U.avatar,
-    M.id, M.marque, M.couleur, M.km, M.type, M.prix, M.content, M.like_count, M.created_at, M.imagePost
+    M.id, M.marque, M.couleur, M.km, M.transmission, M.prix, M.description, M.like_count, M.created_at, M.imagePost
     FROM users U, microposts M
     WHERE M.user_id = U.id
     AND M.marque =:marque
-    AND M.couleur =:couleur
-   
-   
-    ORDER BY M.id DESC");
+  
+    ORDER BY M.id");
 
       $q->execute([
       //'user_id'=>'U.id',
-      'marque'=>$marque,
-      'couleur'=>$couleur
+      'marque'=>$marque
+      //'couleur'=>$couleur
       ]);
 
       $datas = $q->fetchAll(PDO::FETCH_OBJ);
 
       $count = count($datas);
-        //var_dump($posts);
+        //var_dump($datas);
         //die();
 
 
@@ -40,15 +38,13 @@ if(isset($_POST['marque'])){
 <table class="table">
     <?php
         if($datas){
-
-       
     ?>
         <thead>
             <tr>
                 <th>Vendeur</th>
                 <th>Couleur</th>
                 <th>Kilométrage</th>
-                <th>Type</th>
+                <th>Description</th>
                 <th>Prix</th>
                 <th>Marque</th>
                 <th>Image</th>
@@ -67,7 +63,7 @@ if(isset($_POST['marque'])){
                 <td><?= $data->prenom ?></td>
                 <td><?= $data->couleur ?></td>
                 <td><?= $data->km ?></td>
-                <td><?= $data->type ?></td>
+                <td><?= $data->description ?></td>
                 <td><?= $data->prix ?></td>
                 <td><?= $data->marque ?></td>
                 <td><img src="membres/imagePosts/<?= $data->imagePost ?>" class="media-body img-thumbnail" style="width:150px;"></td>

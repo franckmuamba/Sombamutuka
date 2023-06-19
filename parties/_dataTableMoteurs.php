@@ -17,7 +17,7 @@
         <tbody>
         <?php
               $q = $bd->prepare("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
-              M.id, M.marque, M.couleur, M.km, M.transmission, M.prix, M.localisation, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
+              M.id, M.marque, M.couleur, M.km, M.transmission, M.prix, M.description, M.categorie, U.adresse, M.like_count, M.created_at, M.imagePost
               FROM users U, microposts M
               WHERE M.user_id = U.id
               AND M.categorie = :cat

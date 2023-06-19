@@ -1,11 +1,13 @@
 <?php $title = "Profile"; ?>
 <?php include('parties/_header.php'); ?>
-    <!--   Latest compiled and minified CSS -->
+    <!--   Latest compiled and minified CSS 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Optional theme -->
+   Optional 
     <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
-    <!-- Custom CSS -->
+  
     <link rel="stylesheet" href="assets/css/style.css" media="all">
+
+    -->
 
 <?php $avat =$user->avatar ?>
 
@@ -179,7 +181,6 @@
 
                                         <?php endif; ?>
                                     </div>
-
                                 </div>
                                 <div class="card mb-3" style= "border: none;">
                                     <div class="card_body">
@@ -232,7 +233,6 @@
     </div>
 </div>
 
-</br>
 <div class="row">
     <div class="col-md-12">
                     <br />
@@ -250,7 +250,7 @@
     </div>
     </div>
 </div>
-                    </br>  </br>  </br>
+</br>  </br>  </br>
                
                
               

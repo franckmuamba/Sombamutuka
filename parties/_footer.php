@@ -39,8 +39,8 @@
 
 
 <script src="assets/js/main.js"></script>
-<script src="drag-drop-file-upload/js/jquery.min.js"></script>
-<script src="drag-drop-file-upload/js/bootstrap.js"></script>
+<!-- <script src="drag-drop-file-upload/js/jquery.min.js"></script>
+<script src="drag-drop-file-upload/js/bootstrap.js"></script> -->
 <script src="assets/js/jquery.timeago.js"></script>
 <script src="assets/js/jquery.timeago.fr.js"></script>
 

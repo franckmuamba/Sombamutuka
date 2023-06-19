@@ -13,7 +13,7 @@ require ("includes/constants.php");
          'id' => $micropostID]);
          //rediriger_vers_ou('validationPub.php');
 
-         header("refresh: 1; url = http://localhost/sombamutuka/validationPub.php");
+         header("url = http://localhost/sombamutuka/validationPub.php");
     }
  
 ?>

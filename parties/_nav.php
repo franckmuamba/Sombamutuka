@@ -1,14 +1,13 @@
 <?php
-$q = $bd->prepare("SELECT id FROM notifications
-              WHERE subject_id = ? AND seen = '0'");
+//$q = $bd->prepare("SELECT id FROM notifications
+  //            WHERE subject_id = ? AND seen = '0'");
 
-$q->execute([get_session('user_id')]);
-$notifications_count = $q->rowCount();
+//$q->execute([get_session('user_id')]);
+//$notifications_count = $q->rowCount();
 ?>
 
 <style>
-
-    .navbar {
+    #navbar {
         padding: 14px 0;
     }
     .navbar-nav {
@@ -21,21 +20,19 @@ $notifications_count = $q->rowCount();
     }
 
 </style>
-
-<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #00a5bf;" id="navbar">
-    <a class="navbar-brand" href="index.php"><img src="img/logo9.png" style="width:100%; height:60px; margin: -12px 25px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00a5bf;" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand"  href="index.php"><img src="img/logo9.png" style="width:100%; height:60px; margin: -12px 25px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
           
          
-        </ul>
-
-        <ul class="navbar-nav mr-auto">                      
-        <li class="nav-item">
+    </ul>  
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+            <li class="nav-item">
                         <a class="nav-link <?= set_active('index') ?>" href="index.php ">Accueil</a>
                     </li>
                    
@@ -51,9 +48,9 @@ $notifications_count = $q->rowCount();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= set_active('apropos') ?>" href="apropos.php ">A propos</a>
-                    </li>
+                 </li>
 
-                <?php if (is_logged_in()):?>
+                 <?php if (is_logged_in()):?>
                         <li class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Menu
@@ -65,29 +62,29 @@ $notifications_count = $q->rowCount();
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item <?= set_active('deconnexion') ?>" href="deconnexion.php" >Déconnexion</a>
                             </div>
-                    </li>
+                        </li>
                  <!-- MENU SIGN IN SIGN UP -->
                 <?php elseif(!is_logged_in()): ?>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Signup/Login
-                      </a>
-                      <ul class="dropdown-menu">
-                        
-                        <li>
-                            <a class="dropdown-item <?= set_active('connexion') ?>" href="connexion.php ">Connexion</a>
-                        </li>
-                        
-                        <li>
-                            <a class="dropdown-item <?= set_active('inscription') ?>" href="inscription.php ">Inscription</a>
-                        </li>
-                        
-                      </ul>
-                </li>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Signup/Login
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                            <li>
+                                <a class="dropdown-item <?= set_active('connexion') ?>" href="connexion.php ">Connexion</a>
+                            </li>
+                            
+                            <li>
+                                <a class="dropdown-item <?= set_active('inscription') ?>" href="inscription.php ">Inscription</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
               
             <?php endif;?>
-        </ul>
-
+      </ul>
     </div>
+  </div>
 </nav>
 </br></br></br>

@@ -27,7 +27,7 @@ if(!empty($_GET['id']))
         $_SESSION['avatar'] = $infoUtils->avatar;
 
         $q = $bd->prepare("SELECT U.id, DATEDIFF( M.dateEnd, Now() ) AS nombreJour, U.prenom, U.email, U.avatar,
-                             DATEDIFF(M.dateEnd, M.created_at ) AS nombre, M.user_id, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.localisation, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
+                             DATEDIFF(M.dateEnd, M.created_at ) AS nombre, M.user_id, M.id, M.marque, M.modele, M.couleur, M.km, M.transmission, M.description, M.prix, M.annee, M.categorie, M.like_count, M.created_at, M.imagePost
                              FROM users U, microposts M
                              WHERE M.user_id = U.id
                              AND M.user_id = :user_id

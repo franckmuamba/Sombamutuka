@@ -1,3 +1,30 @@
+<script>
+$(document).ready(function () {
+	$('#example').DataTable({
+        "language": {
+          
+            //"lengthMenu": "Afficher _MENU_ articles par page",
+            "lengthMenu": "<i class='bx bxs-data'></i>",
+            "zeroRecords": "Aucune donnée trouvée - désolé",
+            "info": "Afficher page _PAGE_ sur _PAGES_",
+            "infoEmpty": "Pas d'articles disponibles",
+            "infoFiltered": "(filter à partir de _MAX_ total artciles)",
+            "search": "Rechercher <i class='bx bx-search'></i>",
+            
+            "paginate": {
+            "first":      "Premier",
+            "last":       "Dernier",
+            "next":       "Suivant",
+            "previous":   "Précédent"
+             },
+            
+          
+        }
+    });
+});
+
+
+</script>
 <main>
 			<div class="head-title">
 				<div class="left">
@@ -40,13 +67,7 @@
 						<p>Utilisateurs inactifs</p>
 					</span>
 				</li>
-				<li>
-					<i class='bx bxs-dollar-circle'></i>
-					<span class="text">
-						<h3>$2543</h3>
-						<p>Total Sales</p>
-					</span>
-				</li>
+				
 			</ul>
 
 
@@ -88,34 +109,11 @@
 						</table>
 					
 				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
+			
 			</div>
+			<?php
+
+include ('parties/_dataTableConfirm.php')
+//header("url = http://localhost/sombamutuka/validationPub.php");
+?>
 		</main>

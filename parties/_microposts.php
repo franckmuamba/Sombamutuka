@@ -36,15 +36,12 @@
         border-radius: 50%;
     }
     .pull-left .name_image .div_1 img {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 80%;
         border-radius: 50%;
     }
 
-    .pull-left .name_image .div_2 {
-        /* border: 1px solid red; */
-
-    }
+  
 
     .pull-left .name_image .div_2 h4 {
         /* border: 1px solid red; */
@@ -103,7 +100,7 @@
 
     @media only screen and (min-width: 920px) {
         .media {
-            display: flex; */
+            display: flex; 
             flex-wrap: wrap;
             width: 350px;
         }   
@@ -142,7 +139,7 @@
                 </button>
                 </div>
                 <div class="col-md-6">
-                    <a href="detail.php?id=<?= nl2br(echap($micropost->id)); ?>"  type="button"  class="btn btn-secondary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
+                    <a href="detailMicropost.php?id=<?= nl2br(echap($micropost->id)); ?>"  type="button"  class="btn btn-secondary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
                         Ouvrir
                     </a>
             </div>
@@ -186,11 +183,24 @@
   </div>
 </div>
 <!-- Modal -->
-
+<script>
+$(document).ready(function(){
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+});
+</script>
 <script>
     $(document).ready(function(){
+   
         function fetch_postdata(id)
         {
+            var serveur = document.location.hostname;
+            alert(serveur);
+            //alert("fecth_details.php");
+            //alert(rest.getFullUrl())
             $.ajax({
                 url: "fecth_details.php",
                 method: "POST",
@@ -200,6 +210,7 @@
                     $('#post_modal').modal('show');
                     $('#post_detail').html(data);
                 }
+               
             })
         }
 

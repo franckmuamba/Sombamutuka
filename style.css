@@ -10,6 +10,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 li {
 	list-style: none;
 }
@@ -84,6 +88,7 @@ body {
 	z-index: 500;
 	padding-bottom: 20px;
 	box-sizing: content-box;
+	text-decoration: none;
 }
 #sidebar .brand .bx {
 	min-width: 60px;
@@ -138,19 +143,25 @@ body {
 	color: var(--dark);
 	white-space: nowrap;
 	overflow-x: hidden;
+	text-decoration: none;
 }
 #sidebar .side-menu.top li.active a {
 	color: var(--blue);
+	text-decoration: none;
 }
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
 	transition: width .3s ease;
+	text-decoration:none;
 }
 #sidebar .side-menu li a.logout {
 	color: var(--red);
 }
 #sidebar .side-menu.top li a:hover {
 	color: var(--blue);
+	text-decoration: none;
+	
+	text-decoration:none;
 }
 #sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));

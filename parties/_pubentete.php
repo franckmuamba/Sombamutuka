@@ -34,29 +34,63 @@
                                         <div class="row">
                                         <h3>Rechercher vehicule par </h3>
                                         
-                                                                <div class="col-md-6 col-ms-6">
+                                                                <div class="col-md-6 col-sm-6">
                                                                 </br>
                                                                         <div id="filters">
-                                                                                
-                                                                                <select class="form-select" aria-label="Default select example" name="fetchval" id="fetchval">
+                                        <form method="post" action="filtrepost.php">                                  
+                                                                             <select class="form-select" aria-label="Default select example" name="fetchval" id="fetchval">
                                                                                         <option value="" disabled="" selected="">Selection marque..</option>
                                                                                         <option value="TOYOTA">TOYOTA</option>
                                                                                         <option value="IST">IST</option>
                                                                                         <option value="LAMBORGHINI">LAMBORGHINI</option>
+                                                                                        <option value="NISSAN">NISSAN</option>
                                                                                         <option value="JEEP">JEEP</option>
                                                                                 </select>
                                                                         </div>
                                                                 </div>
-                                                                <div class="col-md-6 col-ms-6">
+                                                                <div class="col-md-6 col-sm-6">
                                                                 </br>
                                                                         <div id="filters">
                                                                                 <select class="form-select" aria-label="Default select example" name="fetchcolor"  id="fetchcolor">
                                                                                 <option value="" disabled="" selected="">Selection couleur..</option>
-                                                                                <option value="BLANCHE">BLANCHE</option>
+                                                                                <option value="BLANC">BLANC</option>
                                                                                 <option value="NOIRE">NOIRE</option>
                                                                                 <option value="BLEU">BLEU</option>
                                                                                 <option value="JAUNE">JAUNE</option>
                                                                                 <option value="GRISE">GRISE</option>
+                                                                                </select>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-6">
+                                                                </br>
+                                                                        <div id="filters">
+                                                                                <select class="form-select" aria-label="Default select example" name="annee"  id="annee">
+                                                                                        <option value="" disabled="" selected="">Annee de fabrication..</option>
+                                                                                        <option>2000</option>
+                                                                                        <option>2001</option>
+                                                                                        <option>2002</option>
+                                                                                        <option>2003</option>
+                                                                                        <option>2004</option>
+                                                                                        <option>2005</option>
+                                                                                        <option>2006</option>
+                                                                                        <option>2007</option>
+                                                                                        <option>2008</option>
+                                                                                        <option>2009</option>
+                                                                                        <option>2010</option>
+                                                                                        <option>2011</option>
+                                                                                        <option>2012</option>
+                                                                                        <option>2013</option>
+                                                                                        <option>2014</option>
+                                                                                        <option>2015</option>
+                                                                                        <option>2016</option>
+                                                                                        <option>2017</option>
+                                                                                        <option>2018</option>
+                                                                                        <option>2019</option>
+                                                                                        <option>2020</option>
+                                                                                        <option>2021</option>
+                                                                                        <option>2022</option>
+                                                                                        <option>2023</option>
                                                                                 </select>
                                                                         </div>
                                                                         
@@ -66,10 +100,10 @@
                                         </br>
                                         <div class="d-grid gap-2">
                                              
-                                                        <input class="btn btn-primary"  type="submit" value="Rechercher" id="fetchvaleur" name="fetchvaleur"/>
+                                                <input class="btn btn-primary"  type="submit" value="submit" id="submit" name="submit"/>
                                                
                                         </div>
-                                        
+                                        </form> 
                                         </p>
                                         </div>
                             

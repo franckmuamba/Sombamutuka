@@ -160,8 +160,8 @@ $(document).ready(function () {
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3><?php echo $nombreTotal ?></h3>
-						<p>Total Publications</p>
+						<h3><?php echo $totalPosts  ?></h3>
+						<p>Total Posts</p>
 					</span>
 				</li>
 				<li>
@@ -199,7 +199,7 @@ $(document).ready(function () {
 <?php
 
     include ('parties/_dataTableConfirm.php')
-
+	//header("url = http://localhost/sombamutuka/validationPub.php");
 ?>
 <!-- FIN TABLEAU ALL DATA WITH FILTER  -->
 <br><br><br>
@@ -211,3 +211,9 @@ $(document).ready(function () {
 <?php include ('parties/_footerp.php'); ?>
 <!-- Animations des blocks -->
 </html>
+<style>
+.carousel-inner > .item > img {
+   width:640px;
+   height:360px;
+ }
+</style>

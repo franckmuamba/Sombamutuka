@@ -4,10 +4,10 @@
  include ("config/database.php");
  include("includes/fonctions.php");
  require ("includes/constants.php");
-
-
- include('parties/_header.php'); 
  
+ //include('parties/_header.php'); 
+ include('parties/_caroussel.php');
+
      if(isset($_GET["id"]))
      {
          $output= '';
@@ -30,7 +30,7 @@
  
  
          $requete = $bd->prepare("SELECT U.id, user_id, U.prenom, U.email, U.avatar, U.telephone,
-         M.id, M.marque, M.couleur, M.km, M.transmission, M.prix, M.annee, M.modele,M.localisation, M.like_count, M.created_at, M.imagePost
+         M.id, M.marque, M.couleur, M.km, M.transmission, M.prix, M.annee, M.modele,M.description, M.like_count, M.created_at, M.imagePost
          FROM users U, microposts M
          WHERE M.user_id = U.id
          AND
@@ -75,7 +75,7 @@
                        <i class="bx bxs-phone" style="color:gray"></i>  Téléphone : '.$mic->telephone.' <br/>
                      </p>
                      <p class="card-text" style="color:darkgrey;">
-                      <i class="bx bx-current-location" style="color:gray"></i>  Localisation : '.$mic->localisation.' <br/>
+                      <i class="bx bx-current-location" style="color:gray"></i>  Localisation : '.$mic->description.' <br/>
                      </p>
                  </div>
                  <hr>
@@ -98,20 +98,47 @@
                     <div class="col-sm-3 col-md-3">
                     </div>
                 </div>
-
-               
-
-             
+                
              ';
          }
-         $output .='</div>';
-         echo $output;
-         
-     }
-  
- ?>
 
-<?php include('parties/_footer.php'); ?>
+        
+         
+         $output .='</div>';
+        // echo $output;
+         
+        
+
+     }
+ ?>
+ <div class="container">
+ <div class="col-sm-6 col-md-6">
+                    <h3 class="h3_nouv ">ARTICLES RECENTS</h3>
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                        <?php echo make_slide_indicators($bd); ?>
+                        </ol>
+
+                        <div class="carousel-inner" >
+                            <?php echo make_slides($bd); ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div> 
+                    
+</div>
+</div>
+<?php 
+echo $output;
+include('parties/_footer.php'); ?>
 
 
 
