@@ -15,31 +15,12 @@
 
 include ('parties/_flash.php')
 ?>
-<section id="indexmoteurs" >
-    <div class="container">
-    <?php
-
-        //include ('parties/_pubentetemotos.php')
-
-    ?>
-    </div>
-   
-</section>
-<div class="row">
-    <?php
-
-
-    include ('parties/_error.php')
-
-    ?>
-    <div class="machin">
-  
-            
-    </div>
-          
-</div>
 
 <style>
+     body {
+        /* border: 1px solid red; */
+        overflow-x: hidden;
+    }
     #post_detail
     {
        font-family: Arial, Helvetica, sans-serif;
@@ -47,9 +28,128 @@ include ('parties/_flash.php')
        color: gray;
        font-size: 12px;
     }
+
+.index 
+   {
+     color: rgb(0, 0, 0);
+     width: 100%;
+    height: 700px;
+    margin-top:-78px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+
+      .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 100px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff67;
+    line-height: 5rem;
+  }
+  
+  .sp {
+    top: 65%;
+    transform: translateX(100%);
+    color: #f5deb3c8;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bolder;
+    
+  }
+@media only screen and (min-width: 960px) {
+
+    
+  .index 
+   {
+     color: rgb(0, 0, 0);
+     width: 100%;
+    height: 700px;
+    margin-top:-68px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .index img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .flou {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #486c7594;
+    position: absolute;
+    text-align: center;
+    }
+
+      .p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 300px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff67;
+    line-height: 5rem;
+  }
+  
+  .sp {
+    top: 65%;
+    left: 45%;
+    transform: translateX(100%);
+    color: #f5deb3c8;
+    position: absolute;
+    font-size: 100px;
+    font-weight: bolder;
+    
+  }
+ 
+}
 </style>
 
-<br><br><br><br><br><br><br><br>
+<section class="index" >
+  <div class=" flou"></div>
+  <p class="p">SOMBA</p>
+  <p class="sp">MOTEUR</p>
+  <img src="assets/img/m1.jpeg" alt="time home image">
+  <div class="container">
+  </div>
+<div class="row">
+    <?php
+
+
+    include ('parties/_error.php')
+
+    ?>
+    <div class="machin">      
+    </div>
+          
+</div>
+
 <div class="container text-center">
     <div class="row">
         <div class="col-md-4 col-sm-4">
@@ -67,12 +167,9 @@ include ('parties/_flash.php')
     </div>
 </div>
 
-<br><br><br>
-
 
 <!-- Button trigger modal -->
 
-  <br><br><br>
 <div class="container">
     
     <div class="card mt-3">

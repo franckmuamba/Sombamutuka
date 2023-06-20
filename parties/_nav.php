@@ -7,9 +7,6 @@
 ?>
 
 <style>
-    #navbar {
-        padding: 14px 0;
-    }
     .navbar-nav {
         font-weight: bold;
     }
@@ -19,19 +16,20 @@
         border: none;
     }
 
+    .btn {
+        border: none;
+    }
+
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #00a5bf;" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand"  href="index.php"><img src="img/logo9.png" style="width:100%; height:60px; margin: -12px 25px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <a class="navbar-brand"  href="index.php"><img src="img/logo9.png" style="width:100%; height:60px;"></a>
+    <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon hamburger"></span>
     </button>
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-          
-         
-    </ul>  
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+        <ul class="navbar-nav mr-auto"></ul>  
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
                         <a class="nav-link <?= set_active('index') ?>" href="index.php ">Accueil</a>
                     </li>
@@ -83,7 +81,7 @@
                     </li>
               
             <?php endif;?>
-      </ul>
+        </ul>
     </div>
   </div>
 </nav>

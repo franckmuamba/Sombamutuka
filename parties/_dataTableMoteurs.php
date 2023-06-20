@@ -1,8 +1,24 @@
-<div class="container" id="filtre" style="background-color: #E8F0FE; padding:6px;">
- 
 
-<table id="example" class="display" style="width:100%">
-        <thead style="color: white; background:#2d4879;">
+<style>
+
+  .container_motor {
+    /* border: 1px solid red; */
+    width:100%;
+    overflow-y:scroll;
+  }
+
+  .table thead {
+    width:100%;
+    color: white;
+    background-color: #00a5bf;
+  }
+
+</style>
+
+
+<div class="container_motor" id="filtre" style="background-color: #E8F0FE; padding:6px;">
+<table id="example" class="table" style="width:100%">
+        <thead>
             <tr>
                 <th>Vendeur</th>
                 <th>Marque</th>
