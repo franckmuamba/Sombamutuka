@@ -84,7 +84,7 @@ include ('parties/_flash.php')
      color: rgb(0, 0, 0);
      width: 100%;
     height: 700px;
-    margin-top:-68px;
+    /* margin-top:-68px; */
     position: relative;
     text-align: center;
   }
