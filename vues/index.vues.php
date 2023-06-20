@@ -227,7 +227,7 @@
 
 <!--<div class="line"></div> -->
 <div class="container shadow mb-5 bg-light rounded" style="background-color: #AAAAAA;">
-    <div class="row">
+        <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <h3 class="h3_nouv ">NOUVEAUTÉS</h3>
                             <div class="card" style="width: 100%;">
@@ -427,16 +427,15 @@
                     TOUS LES ARTICLES
                 </h3>
     </div>
-    <!-- <div class="row"> -->
-        <!-- <div class="col-md-12"> -->
-    <div class="col-md-12 post_containter">
-        <div class="row filter_data" id="seachArticle">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12 post_containter">
+                <div class="row filter_data" id="seachArticle">
+                </div>
+            </div>
         </div>
     </div>
-        <!-- </div> -->
-    <!-- </div> -->
 </div>
-
 <script>
     $(document).ready(function(){
         function fetch_postdata(id)
@@ -460,6 +459,8 @@
     });
 
 </script>
+
+
 
 <script type="text/javascript">
     function Initialiser() {
@@ -735,17 +736,23 @@
 <!-- --------------------------------------------------------->
 
 
-<!-- <footer id="footer" class="footer-1">
+<footer id="footer" class="footer-1">
+   
       <div class="footer-copyright">
-          <p>Copyright Sombamutuka © 2023. All rights reserved.</p>
+        
+          <div class="row">
+            <div class="col-md-12 text-center">
+            <p>Copyright Sombamutuka © 2023. All rights reserved.</p>
+            </div>
+          </div>
+      
       </div>
-</footer> -->
+</footer>
 
 
 
-<?php include ('parties/_animationsblock.php'); ?>
-<!-- </body>
-</html> -->
+</body>
+</html>
 
     
-
+<?php include ('parties/_animationsblock.php'); ?>
