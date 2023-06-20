@@ -103,37 +103,39 @@ sleep(1);
         foreach($result as $row)
         {
             $output .='
-            <div class="col-sm-4 col-lg-4 col-md-4 card bg-light">
-                <div style="border:1px solid #ccc; border-radius:5px; padding:10px; margin-bottom:16px; height:570px; margin-top: 25px;">
-                    <div class="cat">
-                        <img src="membres/imagePosts/'.$row['imagePost'].'" alt="photo manquante" class="img-responsive" style="width:100%; height:100%; object-fit: cover;"/>
+            <div class="col-sm-4 col-lg-4 col-md-4 card bg-light post_div">
+                <div class="d_c" style="border:1px solid #ccc; border-radius:5px; padding:10px; margin-bottom:16px; height:570px; margin-top: 25px;">
+                    <div class="d1">
+                        <div class="cat">
+                            <img src="membres/imagePosts/'.$row['imagePost'].'" alt="photo manquante" class="img-responsive" style="width:100%; height:100%; object-fit: cover;"/>
+                        </div>
+                        <p class="card-text" align="center"><strong>
+                        <a class="anchor_1" style="text-decoration:none;" href="#">'
+                        .$row['marque'].' | '
+                        .$row['modele'].' | '
+                        .$row['prix'].'$ </a></strong></p>
                     </div>
-                   <p class="card-text" align="center"><strong>
-                   <a style="text-decoration:none;" href="#">'
-                    .$row['marque'].' | '
-                    .$row['modele'].' | '
-                    .$row['prix'].'$ </a></strong></p>
 
                   
-                    <p class="card-text" style="color:darkgrey;">
-                        
-                    <i class="bx bx-run" style="color:gray"></i> Kilométrage: '.$row['km'].' km<br/>
-                    <i class="bx bxs-calendar"  style="color:gray"></i>  Année de fabrication : '.$row['annee'].' <br/>
-                    <i class="bx bxs-happy" style="color:gray"></i> Vendeur: '.$row['prenom'].' <br/>
-                    <i class="bx bxs-phone" style="color:gray"></i>  Téléphone: '.$row['telephone'].' <br/>
-                    <i class="bx bx-calendar" style="color:gray"></i> Publié le : '.$row['created_at'].' 
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                       <!--     <button type="button" name="view2" class="btn btn-primary btn-sm view2" id="'. $row['id'].'">
-                                Aperçu
-                            </button> -->
-                        </div>
-                        <div class="col-md-6">
-                            <a href="detailMicropost.php?id='.$row['id'].'  type="button"  class="btn btn-primary btn-sm position-absolute bottom-0 end-0 mx-3" target="_blank" >
-                            Détails
-                            </a>
-                        </div>
+                    <div class="d1">    
+                        <p class="card-text" style="color:darkgrey;">
+                        <i class="bx bx-run" style="color:gray"></i> Kilométrage: '.$row['km'].' km<br/>
+                        <i class="bx bxs-calendar"  style="color:gray"></i>  Année de fabrication : '.$row['annee'].' <br/>
+                        <i class="bx bxs-happy" style="color:gray"></i> Vendeur: '.$row['prenom'].' <br/>
+                        <i class="bx bxs-phone" style="color:gray"></i>  Téléphone: '.$row['telephone'].' <br/>
+                        <i class="bx bx-calendar" style="color:gray"></i> Publié le : '.$row['created_at'].' 
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                        <!--     <button type="button" name="view2" class="btn btn-primary btn-sm view2" id="'. $row['id'].'">
+                                    Aperçu
+                                </button> -->
+                            </div>
+                            <div class="col-md-6">
+                                <a href="detailMicropost.php?id='.$row['id'].'  type="button"  class="btn_dtls btn btn-primary btn-sm position-absolute bottom-0 end-0" target="_blank" >
+                                Détails
+                                </a>
+                            </div>
 
                         </div>   
                     </div>            
