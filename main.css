@@ -656,10 +656,10 @@ span.page-link
 {
     justify-content: center;
 }
-.table td,
+/* .table td,
 .table th{
     vertical-align: middle;
-}
+} */
 
 .container#filtre
 {

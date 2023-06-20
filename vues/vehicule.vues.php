@@ -40,6 +40,10 @@
 <?php include ('parties/_flash.php'); ?>
 
 <style>
+  body {
+        /* border: 1px solid red; */
+        overflow-x: hidden;
+    }
     #post_detail
     {
        font-family: Arial, Helvetica, sans-serif;

@@ -1,7 +1,6 @@
 <style>
 
   .container_voiture {
-    /* border: 1px solid red; */
     width:100%;
     overflow-y:scroll;
   }
@@ -12,6 +11,27 @@
     background-color: #00a5bf;
   }
 
+  table.dataTable thead>tr>th.sorting {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    padding: 14px 8px;
+  }
+
+  table.dataTable tbody tr:nth-child(odd) {
+    background-color:  rgba(150, 153, 155, 0.494);;
+    /* border: 1px solid red; */
+  }
+
+  @media only screen and (min-width: 920px) {
+
+    .container_voiture {
+    /* width:100%; */
+    overflow-y: none;
+  }
+
+  }
+
 </style>
 
 
@@ -20,7 +40,7 @@
   <table id="example" class="table" style="width:100%; font-size:12px;" >
     <thead>
         <tr>
-            <th>Vendeur veh</th>
+            <th>Vendeur</th>
             <th>Publié le</th>
             <th>Téléphone</th>
             <th>Adresse</th>
