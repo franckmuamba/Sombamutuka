@@ -12,8 +12,6 @@
       </div>
 </footer>
 
-
-
   <script>
     $(function(){
       //smooth Scrolling

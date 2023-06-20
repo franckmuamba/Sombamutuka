@@ -201,7 +201,7 @@
 </style>
 
     <div class="index img-fluid">
-    <div class="flou"></div>
+        <div class="flou"></div>
         <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
             <span class="span">SOMBAMUTUKA <br>
                 <span>Profitez de nos services sûrs et exclusifs</span>
@@ -227,7 +227,7 @@
 
 <!--<div class="line"></div> -->
 <div class="container shadow mb-5 bg-light rounded" style="background-color: #AAAAAA;">
-        <div class="row">
+    <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <h3 class="h3_nouv ">NOUVEAUTÉS</h3>
                             <div class="card" style="width: 100%;">
@@ -429,13 +429,14 @@
     </div>
     <!-- <div class="row"> -->
         <!-- <div class="col-md-12"> -->
-            <div class="col-md-12 post_containter">
-                <div class="row filter_data" id="seachArticle">
-                </div>
-            </div>
+    <div class="col-md-12 post_containter">
+        <div class="row filter_data" id="seachArticle">
+        </div>
+    </div>
         <!-- </div> -->
     <!-- </div> -->
 </div>
+
 <script>
     $(document).ready(function(){
         function fetch_postdata(id)
@@ -459,8 +460,6 @@
     });
 
 </script>
-
-
 
 <script type="text/javascript">
     function Initialiser() {
@@ -737,22 +736,16 @@
 
 
 <!-- <footer id="footer" class="footer-1">
-   
       <div class="footer-copyright">
-        
-          <div class="row">
-            <div class="col-md-12 text-center">
-            <p>Copyright Sombamutuka © 2023. All rights reserved.</p>
-            </div>
-          </div>
-      
+          <p>Copyright Sombamutuka © 2023. All rights reserved.</p>
       </div>
 </footer> -->
 
 
 
-</body>
-</html>
+<?php include ('parties/_animationsblock.php'); ?>
+<!-- </body>
+</html> -->
 
     
-<?php include ('parties/_animationsblock.php'); ?>
+

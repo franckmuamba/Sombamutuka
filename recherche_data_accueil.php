@@ -44,7 +44,7 @@
             transform: translate(-5rem, 3.3rem);
         }
     }
-    @media only screen and (min-width: 990px) {
+    @media only screen and (min-width: 920px) {
         .post_div {
             width: 440px;
             height: auto;
