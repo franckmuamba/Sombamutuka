@@ -39,8 +39,7 @@ sleep(1);
                     .$row['marque'].' | '
                     .$row['modele'].' | '
                     .$row['prix'].'$ </a></strong></p>
-
-                  
+                    
                     <p class="card-text" style="color:darkgrey;">
                         
                     <i class="bx bx-run" style="color:gray"></i> Kilométrage: '.$row['km'].' km<br/>

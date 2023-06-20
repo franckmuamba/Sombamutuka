@@ -1,5 +1,4 @@
 
-
 <div class="container" id="filtre" style="background-color: #E8F0FE; padding:6px;">
 <table id="example" class="display" style="width:100%; font-size:12px;" >
         <thead style="color: white; background:#2d4879;">

@@ -265,6 +265,9 @@ $(document).ready(function () {
 </div>
 <br>
 <!-- DEBUT TABLEAU ALL DATA WITH FILTER  -->
+
+
+
 <?php
 
     include ('parties/_dataTable.php')
