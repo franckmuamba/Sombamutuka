@@ -131,6 +131,37 @@
     
        } 
 
+       .cat img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        }
+        .cat {
+        height:300px;
+        background-color:red;
+        }
+    
+        #loading
+        {
+            margin-top: 25%;
+            text-align: center;
+            background: url('Loading.gif') no-repeat center;
+            height: 150px;
+        }
+
+        .post_containter {
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px
+        }
+
+        .container {
+            margin: 0 auto;
+            /* border: 1px solid red; */
+            width: 100%;
+        }
    
    @media only screen and (min-width: 920px) {
        .discover {
@@ -167,9 +198,8 @@
         padding-left: 0;
        }
    }
-
-   
 </style>
+
     <div class="index img-fluid">
     <div class="flou"></div>
         <p class="p">ACHÈTEZ VOTRE VOITURE MAINTENANT AVEC
@@ -196,7 +226,7 @@
 </br></br>
 
 <!--<div class="line"></div> -->
-<div class="container p-5 shadow p-3 mb-5 bg-light rounded" style="background-color: #AAAAAA;">
+<div class="container shadow mb-5 bg-light rounded" style="background-color: #AAAAAA;">
         <div class="row">
                     <div class="col-sm-6 col-md-6">
                         <h3 class="h3_nouv ">NOUVEAUTÉS</h3>
@@ -240,17 +270,6 @@
             </div>
 </div>
 
-<style>
-    .cat img {
- height: 100%;
- width: 100%;
- object-fit: cover;
-}
-.cat {
- height:300px;
- background-color:red;
-}
-</style>
 <script>
     $(document).ready(function(){
         $('#marquevehicule').on('change', function(){
@@ -288,11 +307,11 @@
 
 <div class="container">
     <div class="row shadow p-2" id="titrearticle">
-    <div class="card mt-1 card-header" >
-                <h3 class="h3_nouv">
-                    FILTRE ET RECHERCHE
-                </h3>
-    </div>
+        <div class="card mt-1 card-header" >
+                    <h3 class="h3_nouv">
+                        FILTRE ET RECHERCHE
+                    </h3>
+        </div>
             <div class="form-group border rounded-2">
                 <h3 class="h3_nouv">
                     <div class="form-group">
@@ -408,20 +427,15 @@
                     TOUS LES ARTICLES
                 </h3>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-                    <div class="col-md-12">
-                        <br />
-                        <div class="row filter_data" id="seachArticle">
-
-                        </div>
-                    </div>
-            
-        </div>
-    </div></br></br>
-
-
-</div>  </br></br></br>
+    <!-- <div class="row"> -->
+        <!-- <div class="col-md-12"> -->
+            <div class="col-md-12 post_containter">
+                <div class="row filter_data" id="seachArticle">
+                </div>
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
+</div>
 <script>
     $(document).ready(function(){
         function fetch_postdata(id)
@@ -474,166 +488,149 @@
 
 <!-- SCRIPT RECHERCHE BOUTON  -->
 <script>
-var url2 = 'ajax/recherche_data_filtre_bouton.php';
+    var url2 = 'ajax/recherche_data_filtre_bouton.php';
 
-$('#submit').on('click', function ()
-{
-    $('.filter_data').html('<div id="loading"></div>')
-    
-    //var query = $(this).val();
-    var anneefab = $('#anneefabrication').val();
-    var element = $('#element').val();
-    var marquevehicule = $('#marquevehicule').val();
-    var modelevehicule = $('#modelevehicule').val();
-    var kmMin = $('#kmMin').val();
-    var kmMax = $('#kmMax').val();
-    
-    //alert (anneefab);
-   // die();
-   // if (anneefab.length > 0 )
-   // {
-        $.ajax({
-            type : 'POST',
-            url: url2,
-            data: {
-                anneefab: anneefab,
-                marquevehicule:marquevehicule,
-                modelevehicule:modelevehicule,
-                kmMin:kmMin,
-                kmMax:kmMax,
-                element:element
+    $('#submit').on('click', function ()
+    {
+        $('.filter_data').html('<div id="loading"></div>')
+        
+        //var query = $(this).val();
+        var anneefab = $('#anneefabrication').val();
+        var element = $('#element').val();
+        var marquevehicule = $('#marquevehicule').val();
+        var modelevehicule = $('#modelevehicule').val();
+        var kmMin = $('#kmMin').val();
+        var kmMax = $('#kmMax').val();
+        
+        //alert (anneefab);
+    // die();
+    // if (anneefab.length > 0 )
+    // {
+            $.ajax({
+                type : 'POST',
+                url: url2,
+                data: {
+                    anneefab: anneefab,
+                    marquevehicule:marquevehicule,
+                    modelevehicule:modelevehicule,
+                    kmMin:kmMin,
+                    kmMax:kmMax,
+                    element:element
 
-            },
+                },
 
-            success: function (data) {
-                //alert("OUI VALIDE");
-                $("#seachArticle").html(data).show();
-               
-            }
-        });
-   // }
-});
+                success: function (data) {
+                    //alert("OUI VALIDE");
+                    $("#seachArticle").html(data).show();
+                
+                }
+            });
+    // }
+    });
 </script>
 
 <!-- FIN RECHERCHE BOUTON -->
 
 
-
-
-
 <script>
-var url = 'ajax/searchArticle.php';
+    var url = 'ajax/searchArticle.php';
 
-$('#index').on('keyup', function ()
-{
-    var query = $(this).val();
-    
-    if (query.length > 0)
+    $('#index').on('keyup', function ()
     {
-        $.ajax({
-            type : 'POST',
-            url: url,
-            data: {
-                query: query
-            },
-
-            success: function (data) {
-                $("#seachArticle").html(data).show();
-            }
-        });
-    }
-    else
-    {
-                //("#display-results").hide();
-                //$('.filter_data').html(data);
-
-                
-            $(document).ready(function(){
-
-        filter_data();
-
-        function filter_data()
+        var query = $(this).val();
+        
+        if (query.length > 0)
         {
-            $('.filter_data').html('<div id="loading"></div>')
-            var action = 'fetch_data';
-            var minimum_price = $('#hidden_minimum_price').val();
-            var maximum_price = $('#hidden_maximum_price').val();
-            var marque = get_filter('marque');
-            var couleur = get_filter('couleur');
-            var modele = get_filter('modele');
-            var anneefabrication = get_filter('anneefabrication');
-
             $.ajax({
-                url: "recherche_data_accueil.php",
-                method: "POST",
-                data:{action:action, minimum_price:minimum_price,maximum_price:
-                maximum_price, marque:marque, couleur:couleur, modele:modele, anneefabrication:anneefabrication},
-                success:function(data){
-                    //var_dump(data);
-                    //die();
-                    $('.filter_data').html(data);
+                type : 'POST',
+                url: url,
+                data: {
+                    query: query
+                },
+
+                success: function (data) {
+                    $("#seachArticle").html(data).show();
                 }
-            })
-
+            });
         }
-
-        function get_filter(class_name)
+        else
         {
-            var filter = [];
+                    //("#display-results").hide();
+                    //$('.filter_data').html(data);
 
-            $('.'+class_name+':checked').each(function(){
-                filter.push($(this).val());
+                    
+                $(document).ready(function(){
+
+            filter_data();
+
+            function filter_data()
+            {
+                $('.filter_data').html('<div id="loading"></div>')
+                var action = 'fetch_data';
+                var minimum_price = $('#hidden_minimum_price').val();
+                var maximum_price = $('#hidden_maximum_price').val();
+                var marque = get_filter('marque');
+                var couleur = get_filter('couleur');
+                var modele = get_filter('modele');
+                var anneefabrication = get_filter('anneefabrication');
+
+                $.ajax({
+                    url: "recherche_data_accueil.php",
+                    method: "POST",
+                    data:{action:action, minimum_price:minimum_price,maximum_price:
+                    maximum_price, marque:marque, couleur:couleur, modele:modele, anneefabrication:anneefabrication},
+                    success:function(data){
+                        //var_dump(data);
+                        //die();
+                        $('.filter_data').html(data);
+                    }
+                })
+
+            }
+
+            function get_filter(class_name)
+            {
+                var filter = [];
+
+                $('.'+class_name+':checked').each(function(){
+                    filter.push($(this).val());
+
+                });
+                return filter;
+            }
+            $('.common_selector').click(function()
+            {
+                filter_data();
+            });
+
+            $('#price_range').slider({
+                range:true,
+                min:1000,
+                max:65000,
+                values:[1000, 65000],
+                step:500,
+                stop:function(event, ui)
+                {
+                    $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+                    $('#hidden_minimum_price').val(ui.values[0]);
+                    $('#hidden_maximum_price').val(ui.values[1]);
+                    filter_data();
+
+
+                }
+            });
+
+            $( function() {
+            $( "#slider" ).slider();
+            } );
+
 
             });
-            return filter;
+
+                    
         }
-        $('.common_selector').click(function()
-        {
-            filter_data();
-        });
-
-        $('#price_range').slider({
-            range:true,
-            min:1000,
-            max:65000,
-            values:[1000, 65000],
-            step:500,
-            stop:function(event, ui)
-            {
-                $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
-                $('#hidden_minimum_price').val(ui.values[0]);
-                $('#hidden_maximum_price').val(ui.values[1]);
-                filter_data();
-
-
-            }
-        });
-
-        $( function() {
-        $( "#slider" ).slider();
-        } );
-
-
-        });
-
-                
-    }
-});
+    });
 </script>
-
-
-<style>
-    #loading
-    {
-        margin-top: 25%;
-        text-align: center;
-        background: url('Loading.gif') no-repeat center;
-        height: 150px;
-    }
-
-</style>
-
-
 
 <script>
     $(document).ready(function(){
@@ -739,7 +736,7 @@ $('#index').on('keyup', function ()
 <!-- --------------------------------------------------------->
 
 
-<footer id="footer" class="footer-1">
+<!-- <footer id="footer" class="footer-1">
    
       <div class="footer-copyright">
         
@@ -750,7 +747,7 @@ $('#index').on('keyup', function ()
           </div>
       
       </div>
-</footer>
+</footer> -->
 
 
 
